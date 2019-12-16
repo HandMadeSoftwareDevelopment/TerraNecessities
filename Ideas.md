@@ -1,8 +1,8 @@
 # Ideas for TerraNecessities
 This file will contain the ideas for the mod.
 
-* = connected to Widdling mechanic
-** = connected to Chiseling Table
+- * = connected to Widdling mechanic
+- ** = connected to Chiseling Table
 
 
 ## Item Ideas
