@@ -20,7 +20,7 @@ This file will contain the ideas for the mod.
   Allows the user to make lumber, but makes less lumber in comparison to using the saw
 - Makeshift Sewing Kit
 - Stone Chisel**
-  Cannot be used to chisel stone blocks, only mean for Chiseling Table
+  Cannot be used to chisel stone blocks, only meant for Chiseling Table
 
 
 ## Mechanic Ideas
@@ -31,3 +31,7 @@ This file will contain the ideas for the mod.
   Can be used to craft Wooden Bowls, Small Boats, Sharpened Sticks
 - Chiseling Tabel**
   Allows you to make stone tools quicker
+
+## Ore Ideas
+
+- Gemstone ores
