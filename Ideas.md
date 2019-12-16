@@ -1,6 +1,8 @@
 # Ideas for TerraNecessities
+This file will contain the ideas for the mod.
 
-Item Ideas
+## Item Ideas
+
 -Spearhead
   made by knapping a specific shape
 -Stone Spear
