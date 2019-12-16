@@ -1,0 +1,17 @@
+{
+	"modListVersion": 2,
+	"modList": [{
+		"modid": "terranecessities",
+		"name": "TerraNecessities",
+		"description": "A mod adding features and more than are available in TerraFirmaCraft.",
+		"version": "0.0.1",
+		"mcversion": "1.7.10",
+		"authorList": [
+			"InconnuPersona",
+			"Notled-Isel"
+		],
+		"credits": "",
+		"requiredMods": [ "terrafirmacraft" ],
+		"dependencies": [ "terrafirmacraft" ]
+	}]
+}
