@@ -11,7 +11,7 @@ This file will contain the ideas for the mod.
 - Spearhead -
   made by knapping a specific shape
 - Stone Spear
-- Jute Fiber Armor - 
+- Jute Fiber "Armor" - 
   Made the same way leather armor is, just instead by using 5 Jute Fibers per "use"
   Requires Sewing Kit or Makeshift Sewing Kit
 - Clay Stone Spear Mold
@@ -21,7 +21,19 @@ This file will contain the ideas for the mod.
 - Makeshift Sewing Kit
 - Stone Chisel**
   Cannot be used to chisel stone blocks, only meant for Chiseling Table
-
+- Short Pipe Mold
+- Long Pipe Mold
+- Flintock Pistol Stock
+- Flintock Rifle Stock
+- Flintock Shotgun Stock
+- Stone Musket Shot
+- Metal Musket Shot
+- Wooden Shell
+- Metal Shell
+- Buckshot
+- Ramming Rod (For Musket)
+- Leather Backpack (Takes back slot)
+- Jute Fiber Backpack (Takes back slot)
 
 ## Mechanic Ideas
 
@@ -29,9 +41,15 @@ This file will contain the ideas for the mod.
   Same way knapping is done with two stones, instead this is a stick and a knife
   
   Can be used to craft Wooden Bowls, Small Boats, Sharpened Sticks
-- Chiseling Tabel**
+- Chiseling Tabel** - 
   Allows you to make stone tools quicker
+- Glass Blowing -
+  allows you to make glass bottles, vials, and potion bottles
+  
+- Claysmithing Skill*** -
+  Allows you to create better and better clay items that can work more than once and or decrease the chances of the item breaking when used
 
 ## Ore Ideas
 
-- Gemstone ores
+- Gemstone Ores
+- 
