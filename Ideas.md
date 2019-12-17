@@ -68,6 +68,7 @@ This file will contain the ideas for the mod.
 - Pottery Exhaust (requires for pottery furnace)
 - Chiseled Cauldron (requires metal chisel, allows you to make soups as long as there is a campfire below)
 - Makeshift bed (uses thatch blocks)
+- Sieve (allows you to sift through gravel and sand for possible materials)
 ### Glass
 - Glass Jar***
 - Glass Vial***
@@ -90,6 +91,9 @@ This file will contain the ideas for the mod.
   Allows you to create better and better clay items that can work more than once and or decrease the chances of the item breaking when used
 - Soupmaking**** -
   Allows you to make soups of all kinds, only allows vegetables, mushrooms, and meats
+  
+- Jarring/Preserves -
+  Uses jars to preserve food, requires stone cauldron
 
 ## Ore Ideas
 - I have no idea
