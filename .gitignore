@@ -24,6 +24,7 @@ hs_err_pid*
 
 # Miscellaneous folders and items
 /.gradle/
+/asm/
 /bin/
 /config/
 /crash-reports/

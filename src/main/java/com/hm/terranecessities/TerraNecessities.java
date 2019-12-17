@@ -8,7 +8,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = TerraNecessities.MODID, name = TerraNecessities.NAME, version = TerraNecessities.VERSION)
+@Mod(dependencies = "required-after:tfc_coremod", modid = TerraNecessities.MODID, name = TerraNecessities.NAME, version = TerraNecessities.VERSION)
 
 public class TerraNecessities {
 	public static final String MODID = "terranecessities";

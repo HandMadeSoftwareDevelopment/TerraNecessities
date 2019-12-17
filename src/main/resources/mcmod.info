@@ -11,7 +11,7 @@
 			"Notled-Isel"
 		],
 		"credits": "",
-		"requiredMods": [ "terrafirmacraft" ],
-		"dependencies": [ "terrafirmacraft" ]
+		"requiredMods": [ "tfc_coremod" ],
+		"dependencies": [ "tfc_coremod" ]
 	}]
 }
