@@ -19,9 +19,15 @@ This file will contain the ideas for the mod.
 ## Item Ideas
 ### Molds
 - Double Ingot Mold (requires 200 units of metal to make)
-- Clay Stone Spear Mold
+- Clay Metal Spear Mold ((single or double) requires 50/100 units of metal)
 - Short Pipe Mold (Requires Iron or higher for weaponizing)
 - Long Pipe Mold (Requires Iron or higher for weaponizing)
+- Double Knife Mold (requires 100 units of metal)
+- Double Hoe Mold (requires 100 units of metal)
+- Metal Arrowhead Mold ((single, double, or quad) requires 25,50, or 100 units of metal for 2, 4, or 8 arrowheads)
+- Metal Block Mold (requires 900 units of metal, made in 4 pieces, takes up same amount of space as Large Vessel when firing)
+- Metal Rod Mold (requires 100 units of metal, makes 4 rods)
+- Metal Needle Mold (requires 10 units of metal to make 10 needles)
 ### Weapons
 - Sharpened Stick*
 - Spearhead -
@@ -46,13 +52,15 @@ This file will contain the ideas for the mod.
   Made the same way leather armor is, just instead by using 5 Jute Fibers per "use"
   Requires Sewing Kit or Makeshift Sewing Kit
 - Cloth
-- Cloth Armor (5 cloth allows you to make armor)
+- Cloth Armor (5 cloth allows you to make armor, requires Sewing Kit or Makeshift Sewing Kit)
 - Leather Backpack (Takes back slot)
 - Jute Fiber Backpack (Takes back slot)
+- Cloth Backpack (Takes back slot)
 ### Tools
 - Log Splitter -
   Allows the user to make lumber, but makes less lumber in comparison to using the saw
 - Makeshift Sewing Kit
+- Sewing Kit
 - Stone Chisel**
   Cannot be used to chisel stone blocks, only meant for Chiseling Table
 ### Misc
@@ -85,3 +93,8 @@ This file will contain the ideas for the mod.
 
 ## Ore Ideas
 - I have no idea
+
+## TFC Mod Corrections (If Possible)
+- Knife mold should only use 50 units of metal, there should also be a double knife mold that uses 100 units of metal for both blades
+- Same goes with hoes
+- Should be allowed to make 2 sets of clay bowls (4 total)
