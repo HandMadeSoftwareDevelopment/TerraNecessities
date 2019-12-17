@@ -6,6 +6,7 @@ This file will contain the ideas for the mod.
 - ***= connected to Glass Blowing
 - ****= connected to Soupmaking
 
+## Item Ideas
 ## Plant Ideas
 - Peanut Plant
 - Cotton Plant
@@ -16,7 +17,6 @@ This file will contain the ideas for the mod.
 - Soups**** (read about soupmaking)
 - Peanut butter (made in quern)
 
-## Item Ideas
 ### Molds
 - Double Ingot Mold (requires 200 units of metal to make)
 - Clay Metal Spear Mold ((single or double) requires 50/100 units of metal)
