@@ -1,1 +1,6 @@
+
+# Items
 item.tn_testitem.name=Terra Necessity Item
+
+# Creative tabs
+itemGroup.TerraNecessities=TerraNecessities
