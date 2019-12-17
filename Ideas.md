@@ -1,7 +1,7 @@
 # Ideas for TerraNecessities
 This file will contain the ideas for the mod.
 
-- *= connected to Wittling mechanic
+- *= connected to Whittling mechanic
 - **= connected to Chiseling Table
 - ***= connected to Glass Blowing
 - ****= connected to Soupmaking
@@ -77,7 +77,7 @@ This file will contain the ideas for the mod.
 - Potion Bottle***
 
 ## Mechanic Ideas
-- Wittling* -
+- Whittling* -
   Same way knapping is done with two stones, instead this is a stick and a knife
   
   Can be used to craft Wooden Bowls, Small Boats, Sharpened Sticks
