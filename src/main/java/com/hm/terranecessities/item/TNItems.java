@@ -1,15 +1,17 @@
 package com.hm.terranecessities.item;
 
-import com.bioxx.tfc.Items.Pottery.ItemPotteryMold;
+import com.hm.terranecessities.core.TNTabs;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
 public class TNItems {
+	private static String[] moldMetaNames = new String[] { "clay", "ceramic", "fired_copper", "fired_bronze", "fired_bismuth_bronze", "fired_black_bronze" };
+	
 	public static Item clayMoldDoubleKnife;
 	
 	public static void loadItems() {
-		clayMoldDoubleKnife = new ItemPotteryMold().setMetaNames(new String[] { "tn_claymolddknife", "tn_ceramicmolddknife", "tn_ceramicmolddknife_copper", "tn_ceramicmolddknife_bronze", "tn_ceramicmolddknife_bismuthbronze", "tn_ceramicmolddknife_blackbronze" }).setUnlocalizedName("tn_dknifemold");
+		clayMoldDoubleKnife = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_knife_mold");
 	}
 	
 	public static void registerItems() {
