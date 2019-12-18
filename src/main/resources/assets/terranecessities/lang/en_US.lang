@@ -4,3 +4,6 @@ item.tn_testitem.name=Terra Necessity Item
 
 # Creative tabs
 itemGroup.TerraNecessities=TerraNecessities
+
+# Tiles
+tile.TNKiln.name=Pottery Kiln

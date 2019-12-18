@@ -1,6 +1,7 @@
 package com.hm.terranecessities;
 
-import com.hm.terranecessities.init.TNItems;
+import com.hm.terranecessities.block.TNBlocks;
+import com.hm.terranecessities.item.TNItems;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -27,6 +28,11 @@ public class TerraNecessities {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		instance = this;
+		
+		TNBlocks.loadBlocks();
+		TNBlocks.registerBlocks();
+		
+		proxy.registerTileEntities();
 		
 		TNItems.init();
 	}
