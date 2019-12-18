@@ -1,17 +1,18 @@
 package com.hm.terranecessities.item;
 
-import com.hm.terranecessities.TerraNecessities;
-import com.hm.terranecessities.core.TNTabs;
+import com.bioxx.tfc.Items.Pottery.ItemPotteryMold;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
 public class TNItems {
-	public static Item testItem;
+	public static Item clayMoldDoubleKnife;
 	
-	public static void init() {
-		testItem = new Item().setUnlocalizedName("tn_testitem").setTextureName(TerraNecessities.MODID + ":copper_double_knife_mold").setCreativeTab(TNTabs.TN_ITEMS);
-		
-		GameRegistry.registerItem(testItem, testItem.getUnlocalizedName());
+	public static void loadItems() {
+		clayMoldDoubleKnife = new ItemPotteryMold().setMetaNames(new String[] { "tn_claymolddknife", "tn_ceramicmolddknife", "tn_ceramicmolddknife_copper", "tn_ceramicmolddknife_bronze", "tn_ceramicmolddknife_bismuthbronze", "tn_ceramicmolddknife_blackbronze" }).setUnlocalizedName("tn_dknifemold");
+	}
+	
+	public static void registerItems() {
+		GameRegistry.registerItem(clayMoldDoubleKnife, clayMoldDoubleKnife.getUnlocalizedName());
 	}
 }

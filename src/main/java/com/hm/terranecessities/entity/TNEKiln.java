@@ -30,8 +30,8 @@ public class TNEKiln extends NetworkTileEntity implements IInventory {
 	public ItemStack decrStackSize(int i, int j) {
 		ItemStack stack, newStack;
 		
-		if(storage[i] != null) {
-			if(storage[i].stackSize <= j) {
+		if (storage[i] != null) {
+			if (storage[i].stackSize <= j) {
 				stack = storage[i];
 				storage[i] = null;
 				return stack;
@@ -39,13 +39,12 @@ public class TNEKiln extends NetworkTileEntity implements IInventory {
 			
 			newStack = storage[i].splitStack(j);
 			
-			if(storage[i].stackSize == 0) {
+			if (storage[i].stackSize == 0) {
 				storage[i] = null;
 			}
 			
 			return newStack;
-		}
-		else {
+		} else {
 			return null;
 		}
 	}
