@@ -1,6 +1,11 @@
 
 # Items
-item.tn_dknifemold.name=Clay Double Knife Mold
+item.double_knife_mold.clay.name=Clay Double Knife Mold
+item.double_knife_mold.ceramic.name=Double Knife Mold
+item.double_knife_mold.fired_copper.name=Double Knife Mold (Copper)
+item.double_knife_mold.fired_bronze.name=Double Knife Mold (Bronze)
+item.double_knife_mold.fired_bismuth_bronze.name=Double Knife Mold (Bismuth Bronze)
+item.double_knife_mold.fired_black_bronze.name=Double Knife Mold (Black Bronze)
 
 # Creative tabs
 itemGroup.TerraNecessities=TerraNecessities
