@@ -1,6 +1,7 @@
 package com.hm.terranecessities;
 
 import com.hm.terranecessities.block.TNBlocks;
+import com.hm.terranecessities.core.TNRecipes;
 import com.hm.terranecessities.item.TNItems;
 
 import cpw.mods.fml.common.Mod;
@@ -34,11 +35,13 @@ public class TerraNecessities {
 		
 		proxy.registerTileEntities();
 		
-		TNItems.init();
+		TNItems.loadItems();
+		TNItems.registerItems();
 	}
 	
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
+		TNRecipes.registerRecipes();
 	}
 	
 	@Mod.EventHandler
