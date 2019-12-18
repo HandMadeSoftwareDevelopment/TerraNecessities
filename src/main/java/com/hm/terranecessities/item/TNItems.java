@@ -10,7 +10,8 @@ public class TNItems {
 	public static Item testItem;
 	
 	public static void init() {
-		testItem = new Item().setUnlocalizedName("tn_testitem").setTextureName(TerraNecessities.MODID + ":copper_double_knife_mold").setCreativeTab(TNTabs.TN_ITEMS);
+		testItem = new Item().setUnlocalizedName("tn_testitem")
+				.setTextureName(TerraNecessities.MODID + ":copper_double_knife_mold").setCreativeTab(TNTabs.TN_ITEMS);
 		
 		GameRegistry.registerItem(testItem, testItem.getUnlocalizedName());
 	}

@@ -5,7 +5,7 @@ import com.hm.terranecessities.core.TNTabs;
 
 public class TNBKiln extends BlockTerraContainer {
 	
-	public TNBKiln(){
+	public TNBKiln() {
 		setBlockName("TNKiln");
 		setBlockTextureName("minecraft:workbench");
 		setCreativeTab(TNTabs.TN_ITEMS);
