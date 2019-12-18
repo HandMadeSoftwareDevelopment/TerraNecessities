@@ -6,4 +6,4 @@ item.tn_testitem.name=Terra Necessity Item
 itemGroup.TerraNecessities=TerraNecessities
 
 # Tiles
-tile.TNKiln.name=Pottery Kiln
+tile.TNKiln.name=Kiln
