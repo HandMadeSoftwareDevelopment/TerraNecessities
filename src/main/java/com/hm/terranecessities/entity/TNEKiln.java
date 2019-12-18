@@ -1,6 +1,6 @@
 package com.hm.terranecessities.entity;
 
-import com.dunk.tfc.TileEntities.NetworkTileEntity;
+import com.bioxx.tfc.TileEntities.NetworkTileEntity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

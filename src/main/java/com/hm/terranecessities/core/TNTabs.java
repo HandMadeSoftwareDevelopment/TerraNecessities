@@ -1,6 +1,6 @@
 package com.hm.terranecessities.core;
 
-import com.dunk.tfc.Core.TFCTabs;
+import com.bioxx.tfc.Core.TFCTabs;
 
 import net.minecraft.creativetab.CreativeTabs;
 
