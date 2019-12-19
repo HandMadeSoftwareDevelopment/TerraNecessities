@@ -10,7 +10,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(dependencies = "required-after:tfc_coremod", modid = TNCore.MODID, name = TNCore.NAME, version = TNCore.VERSION)
+@Mod(dependencies = "required-after:tfc_coremod;required-after:tfccrops;required-after:tfcmetals;", modid = TNCore.MODID, name = TNCore.NAME, version = TNCore.VERSION)
 
 public class TerraNecessities {
 	public static final String CLIENT_PROXY_CLASS = "com.hm.terranecessities.ClientProxy";
