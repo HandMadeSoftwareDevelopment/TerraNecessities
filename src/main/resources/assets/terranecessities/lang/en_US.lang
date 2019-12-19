@@ -1,4 +1,3 @@
-
 # Items
 item.double_knife_mold.clay.name=Clay Double Knife Mold
 item.double_knife_mold.ceramic.name=Double Knife Mold
@@ -6,6 +5,22 @@ item.double_knife_mold.fired_copper.name=Double Knife Mold (Copper)
 item.double_knife_mold.fired_bronze.name=Double Knife Mold (Bronze)
 item.double_knife_mold.fired_bismuth_bronze.name=Double Knife Mold (Bismuth Bronze)
 item.double_knife_mold.fired_black_bronze.name=Double Knife Mold (Black Bronze)
+item.double_hoe_mold.clay.name=Clay Double Hoe Mold
+item.double_hoe_mold.ceramic.name=Double Hoe Mold
+item.double_hoe_mold.fired_copper.name=Double Hoe Mold (Copper)
+item.double_hoe_mold.fired_bronze.name=Double Hoe Mold (Bronze)
+item.double_hoe_mold.fired_bismuth_bronze.name=Double Hoe Mold (Bismuth Bronze)
+item.double_hoe_mold.fired_black_bronze.name=Double Hoe Mold (Black Bronze)
+item.shot.clay.name=Clay Shot Mold
+item.shot.ceramic.name=Shot Mold
+item.shot.fired_copper.name=Shot Mold (Copper)
+item.shot.fired_lead.name=Shot Mold (Lead)
+item.shot.fired_zinc.name=Shot Mold (Zinc)
+item.shot.fired_silver.name=Shot Mold (Silver)
+item.shot.lead_shot.name=Lead Shot
+item.shot.silver_shot.name=Silver Shot
+item.shot.zinc_shot.name=Zinc Shot
+item.shot.copper_shot.name=Copper Shot
 
 # Creative tabs
 itemGroup.TerraNecessities=TerraNecessities
