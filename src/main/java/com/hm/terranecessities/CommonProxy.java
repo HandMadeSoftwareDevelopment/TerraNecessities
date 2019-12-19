@@ -13,6 +13,6 @@ public class CommonProxy {
 	}
 	
 	public void registerTileEntities() {
-		GameRegistry.registerTileEntity(TNEKiln.class, "Kiln");
+		GameRegistry.registerTileEntity(TNEKiln.class, "TNKiln");
 	}
 }

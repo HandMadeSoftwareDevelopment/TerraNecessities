@@ -1,5 +1,7 @@
 package com.hm.terranecessities.block;
 
+import com.hm.terranecessities.item.block.TNIKiln;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 
@@ -11,6 +13,6 @@ public class TNBlocks {
 	}
 	
 	public static void registerBlocks() {
-		GameRegistry.registerBlock(kiln, "TNKiln");
+		GameRegistry.registerBlock(kiln, TNIKiln.class, "TNKiln");
 	}
 }

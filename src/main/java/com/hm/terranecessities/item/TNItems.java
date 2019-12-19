@@ -1,7 +1,5 @@
 package com.hm.terranecessities.item;
 
-import com.hm.terranecessities.core.TNTabs;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
