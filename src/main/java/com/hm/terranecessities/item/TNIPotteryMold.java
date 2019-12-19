@@ -1,10 +1,7 @@
 package com.hm.terranecessities.item;
 
-import com.bioxx.tfc.Core.TFCTabs;
 import com.bioxx.tfc.Items.Pottery.ItemPotteryMold;
-import com.bioxx.tfc.api.Enums.EnumSize;
-import com.bioxx.tfc.api.Enums.EnumWeight;
-import com.hm.terranecessities.TerraNecessities;
+import com.hm.terranecessities.TNCore;
 import com.hm.terranecessities.core.TNTabs;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -22,7 +19,7 @@ public class TNIPotteryMold extends ItemPotteryMold {
 	
 	@Override
 	public void registerIcons(IIconRegister registerer) {
-		String prepend = TerraNecessities.MODID + ":" + textureFolder + getUnlocalizedName().replaceFirst("item.", "");
+		String prepend = TNCore.MODID + ":" + textureFolder + getUnlocalizedName().replaceFirst("item.", "");
 		
 		clayIcon = registerer.registerIcon(prepend + "_" + metaNames[0]);
 		ceramicIcon = registerer.registerIcon(prepend + "_" + metaNames[1]);

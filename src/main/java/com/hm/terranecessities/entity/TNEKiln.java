@@ -90,7 +90,7 @@ public class TNEKiln extends NetworkTileEntity implements IInventory {
 	
 	@Override
 	public boolean isItemValidForSlot(int i, ItemStack stack) {
-		return false;
+		return true;
 	}
 	
 	@Override
