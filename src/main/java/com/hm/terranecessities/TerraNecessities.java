@@ -2,6 +2,7 @@ package com.hm.terranecessities;
 
 import com.hm.terranecessities.block.TNBlocks;
 import com.hm.terranecessities.core.TNRecipes;
+import com.hm.terranecessities.handler.TNEntityHandler;
 import com.hm.terranecessities.item.TNItems;
 
 import cpw.mods.fml.common.Mod;
@@ -9,6 +10,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.MinecraftForge;
 
 @Mod(dependencies = "required-after:tfc_coremod;"/*required-after:tfccrops;required-after:tfcmetals;"*/, modid = TNCore.MODID, name = TNCore.NAME, version = TNCore.VERSION)
 public class TerraNecessities {
@@ -38,6 +40,11 @@ public class TerraNecessities {
 	
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
+		
+		TNAchievements.registerAchievements();
+		
+		MinecraftForge.EVENT_BUS.register(new TNEntityHandler());
+		
 		TNRecipes.registerRecipes();
 	}
 	
