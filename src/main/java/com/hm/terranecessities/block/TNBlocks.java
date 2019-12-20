@@ -15,6 +15,6 @@ public class TNBlocks {
 	
 	public static void registerBlocks() {
 		GameRegistry.registerBlock(kiln, TNIKiln.class, "TNKiln");
-		GameRegistry.registerBlock(woodCutter, "TNKiln");
+		GameRegistry.registerBlock(woodCutter, "TNWoodCutter");
 	}
 }
