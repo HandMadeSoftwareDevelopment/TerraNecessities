@@ -5,7 +5,7 @@ import com.bioxx.tfc.Blocks.BlockTerraContainer;
 import com.hm.terranecessities.TNCore;
 import com.hm.terranecessities.core.TNTabs;
 import com.hm.terranecessities.entity.TNEKiln;
-import com.hm.terranecessities.gui.TNGUIHandler;
+import com.hm.terranecessities.gui.TNCommonGUIHandler;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -17,7 +17,7 @@ public class TNBKiln extends BlockTerraContainer {
 	public TNBKiln() {
 		super();
 		
-		setBlockName("TNKiln");
+		setBlockName("TNBKiln");
 		setBlockTextureName(TNCore.MODID + ":snow");
 		setHardness(4.f);
 		setCreativeTab(TNTabs.TN_ITEMS);
@@ -34,7 +34,7 @@ public class TNBKiln extends BlockTerraContainer {
 			return true;
 		}
 		
-		player.openGui(TerraFirmaCraft.instance, TNGUIHandler.TNG_KILN, world, x, y, z);
+		player.openGui(TerraFirmaCraft.instance, TNCommonGUIHandler.TNG_KILN, world, x, y, z);
 		
 		return true;
 	}

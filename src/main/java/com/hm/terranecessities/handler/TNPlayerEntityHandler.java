@@ -8,7 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 
-public class TNEntityHandler {
+public class TNPlayerEntityHandler {
 	@SubscribeEvent
 	public void handleItemPickup(EntityItemPickupEvent event) {
 		EntityPlayer player = event.entityPlayer;
