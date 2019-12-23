@@ -20,21 +20,22 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	public ItemStack[] storage = new ItemStack[3];
 	
 	@Override
-	public int getSizeInventory() {
-		return storage.length;
+	public void closeInventory() {
+		if (worldObj.isRemote) {
+			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+		}
 	}
 	
 	@Override
-	public ItemStack getStackInSlot(int i) {
-		return storage[i];
+	public void createInitNBT(NBTTagCompound arg0) {
 	}
 	
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
 		ItemStack stack;
 		
-		if(storage[i] != null) {
-			if(storage[i].stackSize <= j) {
+		if (storage[i] != null) {
+			if (storage[i].stackSize <= j) {
 				stack = storage[i];
 				storage[i] = null;
 				
@@ -43,13 +44,12 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 			
 			stack = storage[i].splitStack(j);
 			
-			if(storage[i].stackSize == 0) {
+			if (storage[i].stackSize == 0) {
 				storage[i] = null;
 			}
 			
 			return stack;
-		}
-		else {
+		} else {
 			return null;
 		}
 	}
@@ -63,29 +63,15 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 		float f3 = 0.05F;
 		
 		for (int i = 0; i < getSizeInventory(); i++) {
-			if(storage[i] != null) {
+			if (storage[i] != null) {
 				entityitem = new EntityItem(worldObj, xCoord + f, yCoord + f1, zCoord + f2, storage[i]);
-				entityitem.motionX = (float)rand.nextGaussian() * f3;
-				entityitem.motionY = (float)rand.nextGaussian() * f3 + 0.2F;
-				entityitem.motionZ = (float)rand.nextGaussian() * f3;
+				entityitem.motionX = (float) rand.nextGaussian() * f3;
+				entityitem.motionY = (float) rand.nextGaussian() * f3 + 0.2F;
+				entityitem.motionZ = (float) rand.nextGaussian() * f3;
 				
 				worldObj.spawnEntityInWorld(entityitem);
 			}
 		}
-	}
-	
-	@Override
-	public ItemStack getStackInSlotOnClosing(int p_70304_1_) {
-		return null;
-	}
-	
-	@Override
-	public void setInventorySlotContents(int i, ItemStack stack) {
-		if(!TFC_Core.areItemsEqual(storage[i], stack)) {
-			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-		}
-		
-		storage[i] = stack;
 	}
 	
 	@Override
@@ -94,8 +80,8 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	}
 	
 	@Override
-	public boolean hasCustomInventoryName() {
-		return false;
+	public int getInventoryStackLimit() {
+		return 64;
 	}
 	
 	@Override
@@ -105,8 +91,32 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	}
 	
 	@Override
-	public int getInventoryStackLimit() {
-		return 64;
+	public int getSizeInventory() {
+		return storage.length;
+	}
+	
+	@Override
+	public ItemStack getStackInSlot(int i) {
+		return storage[i];
+	}
+	
+	@Override
+	public ItemStack getStackInSlotOnClosing(int p_70304_1_) {
+		return null;
+	}
+	
+	@Override
+	public void handleInitPacket(NBTTagCompound arg0) {
+	}
+	
+	@Override
+	public boolean hasCustomInventoryName() {
+		return false;
+	}
+	
+	@Override
+	public boolean isItemValidForSlot(int i, ItemStack stack) {
+		return false;
 	}
 	
 	@Override
@@ -123,27 +133,16 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	}
 	
 	@Override
-	public void closeInventory() {
-		if (worldObj.isRemote) {
+	public void setInventorySlotContents(int i, ItemStack stack) {
+		if (!TFC_Core.areItemsEqual(storage[i], stack)) {
 			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 		}
+		
+		storage[i] = stack;
 	}
 	
 	@Override
 	public void updateEntity() {
 		TFC_Core.handleItemTicking(this, worldObj, xCoord, yCoord, zCoord);
-	}
-	
-	@Override
-	public boolean isItemValidForSlot(int i, ItemStack stack) {
-		return false;
-	}
-	
-	@Override
-	public void createInitNBT(NBTTagCompound arg0) {
-	}
-	
-	@Override
-	public void handleInitPacket(NBTTagCompound arg0) {
 	}
 }
