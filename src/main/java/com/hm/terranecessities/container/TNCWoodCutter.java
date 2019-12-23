@@ -52,7 +52,8 @@ public class TNCWoodCutter extends ContainerTFC {
 				if (!this.mergeItemStack(slotStack, 4, inventorySlots.size(), true)) {
 					return null;
 				}
-			} else {
+			}
+			else {
 				if (!this.mergeItemStack(slotStack, 0, 4, false)) {
 					return null;
 				}

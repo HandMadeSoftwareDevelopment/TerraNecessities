@@ -8,7 +8,6 @@ import com.hm.terranecessities.entity.TNEKiln;
 import com.hm.terranecessities.gui.TNCommonGUIHandler;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
