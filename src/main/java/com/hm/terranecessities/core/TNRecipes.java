@@ -60,11 +60,11 @@ public class TNRecipes {
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
 		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayPot, 1), new Object[]{
+			"#####",
+			" ### ",
 			"     ",
-			"#   #",
-			"#####",
-			"#####",
-			"#####",
+			"     ",
+			"     ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
 	}
