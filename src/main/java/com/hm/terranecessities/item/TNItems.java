@@ -13,8 +13,6 @@ public class TNItems {
 		clayMoldDoubleHoe = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_hoe_mold");
 		
 		clayPot = new TNIPotteryMold().setUnlocalizedName("cooking_pot_clay");
-		
-		
 	}
 	
 	public static void registerItems() {
