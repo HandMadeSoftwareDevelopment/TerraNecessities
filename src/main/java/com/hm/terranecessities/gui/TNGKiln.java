@@ -25,6 +25,6 @@ public class TNGKiln extends GuiContainerTFC {
 	
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
-		//drawGui(texture);
+		// drawGui(texture);
 	}
 }

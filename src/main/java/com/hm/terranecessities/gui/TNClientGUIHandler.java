@@ -14,8 +14,7 @@ public class TNClientGUIHandler extends TNCommonGUIHandler {
 		
 		try {
 			te = world.getTileEntity(x, y, z);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			te = null;
 		}
 		
@@ -25,7 +24,7 @@ public class TNClientGUIHandler extends TNCommonGUIHandler {
 		
 		case TNG_WOODCUTTER:
 			return new TNGWoodCutter(player.inventory, (TNEWoodCutter) te, world, x, y, z);
-			
+		
 		default:
 			return null;
 		}

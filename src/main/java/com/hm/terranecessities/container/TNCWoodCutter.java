@@ -60,8 +60,7 @@ public class TNCWoodCutter extends ContainerTFC {
 			
 			if (slotStack.stackSize <= 0) {
 				slot.putStack(null);
-			}
-			else {
+			} else {
 				slot.onSlotChanged();
 			}
 			

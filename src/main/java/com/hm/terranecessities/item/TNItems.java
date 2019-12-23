@@ -13,7 +13,6 @@ public class TNItems {
 		clayMoldDoubleHoe = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_hoe_mold");
 		
 		clayPot = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("clay_pot");
-		
 	}
 	
 	public static void registerItems() {
@@ -22,6 +21,4 @@ public class TNItems {
 		
 		GameRegistry.registerItem(clayPot, clayPot.getUnlocalizedName());
 	}
-	
-	
 }
