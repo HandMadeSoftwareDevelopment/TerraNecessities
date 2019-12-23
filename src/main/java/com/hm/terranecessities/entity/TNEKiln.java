@@ -44,7 +44,8 @@ public class TNEKiln extends NetworkTileEntity implements IInventory {
 			}
 			
 			return newStack;
-		} else {
+		}
+		else {
 			return null;
 		}
 	}

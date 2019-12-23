@@ -49,7 +49,8 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 			}
 			
 			return stack;
-		} else {
+		}
+		else {
 			return null;
 		}
 	}

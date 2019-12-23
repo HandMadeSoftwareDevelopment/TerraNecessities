@@ -11,8 +11,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class TNCommonGUIHandler extends GuiHandler {
-	public static final int TNG_KILN = 0,
-			TNG_WOODCUTTER = 1;
+	public static final int
+		TNG_KILN = 0,
+		TNG_WOODCUTTER = 1;
 	
 	public static TNCommonGUIHandler instance = new TNCommonGUIHandler();
 	
@@ -26,7 +27,7 @@ public class TNCommonGUIHandler extends GuiHandler {
 		
 		case TNG_WOODCUTTER:
 			return new TNCWoodCutter(player.inventory, (TNEWoodCutter) te, world, x, y, z);
-			
+		
 		default:
 			return null;
 		}

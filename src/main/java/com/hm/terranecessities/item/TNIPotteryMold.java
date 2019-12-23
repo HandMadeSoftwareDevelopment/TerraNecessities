@@ -1,21 +1,12 @@
 package com.hm.terranecessities.item;
 
-import com.bioxx.tfc.Items.Pottery.ItemPotteryMold;
 import com.hm.terranecessities.TNCore;
-import com.hm.terranecessities.core.TNTabs;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 
-public class TNIPotteryMold extends ItemPotteryMold {
+public class TNIPotteryMold extends TNIPottery {
 	private IIcon bismuthBronzeIcon, blackBronzeIcon, bronzeIcon, copperIcon;
-	
-	public TNIPotteryMold() {
-		super();
-		
-		setCreativeTab(TNTabs.TN_ITEMS);
-		setFolder("pottery/");
-	}
 	
 	@Override
 	public void registerIcons(IIconRegister registerer) {
