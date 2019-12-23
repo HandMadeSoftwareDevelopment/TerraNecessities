@@ -1,8 +1,9 @@
 package com.hm.terranecessities;
 
+import com.bioxx.tfc.Handlers.Network.PacketPipeline;
 import com.hm.terranecessities.block.TNBlocks;
 import com.hm.terranecessities.core.TNRecipes;
-import com.hm.terranecessities.handler.TNEntityHandler;
+import com.hm.terranecessities.handler.TNPlayerEntityHandler;
 import com.hm.terranecessities.item.TNItems;
 
 import cpw.mods.fml.common.Mod;
@@ -23,6 +24,8 @@ public class TerraNecessities {
 	@SidedProxy(clientSide = CLIENT_PROXY_CLASS, serverSide = SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
+	public static final PacketPipeline PACKET_PIPELINE = new PacketPipeline();
+	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		instance = this;
@@ -30,25 +33,33 @@ public class TerraNecessities {
 		TNBlocks.loadBlocks();
 		TNBlocks.registerBlocks();
 		
-		proxy.registerTileEntities();
+		proxy.registerTileEntities(true);
 		
 		TNItems.loadItems();
 		TNItems.registerItems();
 		
 		proxy.registerGUIHandler();
+		
+		return;
 	}
 	
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
+		//PACKET_PIPELINE.initalise();
 		
 		TNAchievements.registerAchievements();
 		
-		MinecraftForge.EVENT_BUS.register(new TNEntityHandler());
+		MinecraftForge.EVENT_BUS.register(new TNPlayerEntityHandler());
 		
 		TNRecipes.registerRecipes();
+		
+		return;
 	}
 	
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		//PACKET_PIPELINE.postInitialise();
+		
+		return;
 	}
 }
