@@ -45,7 +45,7 @@ public class TerraNecessities {
 	
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
-		//PACKET_PIPELINE.initalise();
+		PACKET_PIPELINE.initalise();
 		
 		TNAchievements.registerAchievements();
 		
@@ -58,7 +58,7 @@ public class TerraNecessities {
 	
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		//PACKET_PIPELINE.postInitialise();
+		PACKET_PIPELINE.postInitialise();
 		
 		return;
 	}
