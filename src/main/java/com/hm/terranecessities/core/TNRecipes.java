@@ -13,9 +13,13 @@ import net.minecraft.item.ItemStack;
 public class TNRecipes {
 	
 	public static void registerRecipes() {
-		registerKnapping();
+		CraftingManagerTFC craftingManager;
+		
+		craftingManager = CraftingManagerTFC.getInstance();
+		
+		registerKnapping(craftingManager);
 		registerKilning();
-		registerMolding();
+		registerMolding(craftingManager);
 		registerTooling();
 	}
 	
@@ -42,8 +46,8 @@ public class TNRecipes {
 				new ItemStack(TNItems.ceramicPot,1,0)));
 	}
 	
-	private static void registerKnapping() {
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1), new Object[] {
+	private static void registerKnapping(CraftingManagerTFC manager) {
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1), new Object[] {
 			" #  #",
 			"## ##",
 			"## ##",
@@ -51,7 +55,7 @@ public class TNRecipes {
 			"## ##",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleHoe, 1), new Object[]{
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleHoe, 1), new Object[]{
 			"#####",
 			"   ##",
 			"     ",
@@ -69,16 +73,16 @@ public class TNRecipes {
 			new ItemStack(TFCItems.flatClay, 1, 1)});
 	}
 	
-	private static void registerMolding() {
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 2), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.copperUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleHoe, 1, 1) });
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 3), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.bronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleHoe, 1, 1) });
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 4), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.bismuthBronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleHoe, 1, 1) });
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 5), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.blackBronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleHoe, 1, 1) });
+	private static void registerMolding(CraftingManagerTFC manager) {
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 2), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.copperUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleHoe, 1, 1) });
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 3), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.bronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleHoe, 1, 1) });
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 4), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.bismuthBronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleHoe, 1, 1) });
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 5), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.blackBronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleHoe, 1, 1) });
 		
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 2), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.copperUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1) });
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 3), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.bronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1) });
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 4), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.bismuthBronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1) });
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 5), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.blackBronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1) });
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 2), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.copperUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1) });
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 3), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.bronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1) });
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 4), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.bismuthBronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1) });
+		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 5), new Object[] { "12", '1', Recipes.getStackTemp(new ItemStack(TFCItems.blackBronzeUnshaped, 1, 1)), '2', new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1) });
 	}
 	
 	private static void registerTooling() {

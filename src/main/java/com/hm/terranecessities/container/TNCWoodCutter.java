@@ -4,6 +4,7 @@ import com.bioxx.tfc.Containers.ContainerTFC;
 import com.bioxx.tfc.Core.Player.PlayerInventory;
 import com.bioxx.tfc.api.TFCItems;
 import com.bioxx.tfc.api.Enums.EnumSize;
+import com.hm.terranecessities.container.slot.TNBlockedSlot;
 import com.hm.terranecessities.container.slot.TNExcludedSlot;
 import com.hm.terranecessities.entity.TNEWoodCutter;
 
@@ -34,25 +35,25 @@ public class TNCWoodCutter extends ContainerTFC {
 	protected void layoutContainer(IInventory playerInventory, IInventory chestInventory, int width, int height) {
 		addSlotToContainer(new TNExcludedSlot(chestInventory, 0, 41, 9).allow(TFCItems.copperAxe).setSize(EnumSize.HUGE));
 		addSlotToContainer(new TNExcludedSlot(chestInventory, 0, 41, 34).allow(TFCItems.logs).setSize(EnumSize.HUGE));
-		addSlotToContainer(new TNExcludedSlot(chestInventory, 0, 94, 34).allow(TFCItems.singlePlank).setSize(EnumSize.HUGE));
-		addSlotToContainer(new TNExcludedSlot(chestInventory, 0, 116, 34).allow(TFCItems.stick).setSize(EnumSize.HUGE));
+		addSlotToContainer(new TNBlockedSlot(chestInventory, 0, 94, 34));
+		addSlotToContainer(new TNBlockedSlot(chestInventory, 0, 116, 34));
 	}
 	
 	@Override
-	public ItemStack transferStackInSlotTFC(EntityPlayer player, int slotNum) {
-		ItemStack origStack = null;
-		Slot slot = (Slot) this.inventorySlots.get(slotNum);
+	public ItemStack transferStackInSlotTFC(EntityPlayer player, int index) {
+		ItemStack stack = null;
+		Slot slot = (Slot) this.inventorySlots.get(index);
 		
 		if (slot != null && slot.getHasStack()) {
 			ItemStack slotStack = slot.getStack();
-			origStack = slotStack.copy();
+			stack = slotStack.copy();
 			
-			if (slotNum < 10) {
-				if (!this.mergeItemStack(slotStack, 10, inventorySlots.size(), true)) {
+			if (index < 4) {
+				if (!this.mergeItemStack(slotStack, 4, inventorySlots.size(), true)) {
 					return null;
 				}
 			} else {
-				if (!this.mergeItemStack(slotStack, 0, 10, false)) {
+				if (!this.mergeItemStack(slotStack, 0, 4, false)) {
 					return null;
 				}
 			}
@@ -64,14 +65,14 @@ public class TNCWoodCutter extends ContainerTFC {
 				slot.onSlotChanged();
 			}
 			
-			if (slotStack.stackSize == origStack.stackSize) {
+			if (slotStack.stackSize == stack.stackSize) {
 				return null;
 			}
 			
 			slot.onPickupFromSlot(player, slotStack);
 		}
 		
-		return origStack;
+		return stack;
 	}
 	
 	@Override
