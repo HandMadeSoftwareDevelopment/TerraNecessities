@@ -14,8 +14,7 @@ public class TNClientGUIHandler extends TNCommonGUIHandler {
 		
 		try {
 			te = world.getTileEntity(x, y, z);
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			te = null;
 		}
 		
