@@ -17,7 +17,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 
 public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
-	public ItemStack[] storage = new ItemStack[3];
+	public ItemStack[] storage = new ItemStack[4];
 	
 	@Override
 	public void closeInventory() {
@@ -55,7 +55,7 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	}
 	
 	public void ejectContents() {
-		EntityItem entityitem;
+		EntityItem item;
 		Random rand = new Random();
 		float f = rand.nextFloat() * 0.3F + 0.1F;
 		float f1 = rand.nextFloat() * 2.0F + 0.4F;
@@ -64,13 +64,30 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 		
 		for (int i = 0; i < getSizeInventory(); i++) {
 			if (storage[i] != null) {
-				entityitem = new EntityItem(worldObj, xCoord + f, yCoord + f1, zCoord + f2, storage[i]);
-				entityitem.motionX = (float) rand.nextGaussian() * f3;
-				entityitem.motionY = (float) rand.nextGaussian() * f3 + 0.2F;
-				entityitem.motionZ = (float) rand.nextGaussian() * f3;
+				item = new EntityItem(worldObj, xCoord + f, yCoord + f1, zCoord + f2, storage[i]);
+				item.motionX = (float) rand.nextGaussian() * f3;
+				item.motionY = (float) rand.nextGaussian() * f3 + 0.2F;
+				item.motionZ = (float) rand.nextGaussian() * f3;
 				
-				worldObj.spawnEntityInWorld(entityitem);
+				worldObj.spawnEntityInWorld(item);
 			}
+		}
+	}
+	
+	public void ejectItem(int index) {
+		float f3 = 0.05F;
+		EntityItem item;
+		Random rand = new Random();
+		float f = rand.nextFloat() * 0.8F + 0.1F;
+		float f1 = rand.nextFloat() * 2.0F + 0.4F;
+		float f2 = rand.nextFloat() * 0.8F + 0.1F;
+		
+		if (storage[index] != null) {
+			item = new EntityItem(worldObj, xCoord + f, yCoord + f1, zCoord + f2, storage[index]);
+			item.motionX = (float) rand.nextGaussian() * f3;
+			item.motionY = (float) rand.nextGaussian() * f3 + 0.05F;
+			item.motionZ = (float) rand.nextGaussian() * f3;
+			worldObj.spawnEntityInWorld(item);
 		}
 	}
 	
