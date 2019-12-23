@@ -14,7 +14,7 @@ public class TNItems {
 		
 		clayPot = new TNIPotteryMold().setUnlocalizedName("cooking_pot_clay");
 		
-		clayPot = new TNICookingPot().setUnlocalizedName("clay_pot");
+		clayPot = new TNICookingPot().setUnlocalizedName("cooking_pot_ceramic");
 		
 	}
 	

@@ -13,7 +13,7 @@ public class TNIPottery extends ItemPotteryBase {
 		super();
 		
 		hasSubtypes = true;
-		metaNames = new String[] { "", "" };
+		metaNames = new String[] { "clay", "ceramic" };
 		
 		setCreativeTab(TNTabs.TN_ITEMS);
 		setFolder("pottery/");
