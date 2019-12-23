@@ -14,6 +14,7 @@ public class TNItems {
 		
 		clayPot = new TNIPotteryMold().setUnlocalizedName("cooking_pot_clay");
 		
+		clayPot = new TNICookingPot().setUnlocalizedName("clay_pot");
 		
 	}
 	
@@ -23,6 +24,5 @@ public class TNItems {
 		
 		GameRegistry.registerItem(clayPot, clayPot.getUnlocalizedName());
 	}
-	
 	
 }
