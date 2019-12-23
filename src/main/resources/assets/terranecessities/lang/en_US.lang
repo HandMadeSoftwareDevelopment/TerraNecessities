@@ -42,6 +42,8 @@ item.arrowhead.bronze_spearhead=Bronze Arrowhead
 item.arrowhead.bismuth_bronze_spearhead=Bismuth Bronze Arrowhead
 item.arrowhead.black_bronze_spearhead=Black Bronze Arrowhead
 
+item.cooking_pot.clay.name=Clay Cooking Pot
+item.cooking_pot.ceramic.name=Cooking Pot
 
 # Creative tabs
 itemGroup.TerraNecessities=TerraNecessities

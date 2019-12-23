@@ -41,9 +41,9 @@ public class TNRecipes {
 				new ItemStack(TNItems.clayMoldDoubleKnife, 1, 1)));
 		manager.addRecipe(
 			new KilnRecipe(
-				new ItemStack(TNItems.clayPot, 1),
+				new ItemStack(TNItems.cookingPot, 1),
 				0,
-				new ItemStack(TNItems.ceramicPot, 1)));
+				new ItemStack(TNItems.cookingPot, 1)));
 	}
 	
 	private static void registerKnapping(CraftingManagerTFC manager) {
@@ -63,7 +63,7 @@ public class TNRecipes {
 			"   ##",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayPot, 1), new Object[]{
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.cookingPot, 1), new Object[]{
 			"#####",
 			" ### ",
 			"     ",

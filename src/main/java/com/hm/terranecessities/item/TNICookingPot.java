@@ -7,7 +7,7 @@ public class TNICookingPot extends TNIPottery {
 	public TNICookingPot() {
 		super();
 		
-		metaNames = new String[] { "clay_pot", "clay_pot" };
+		metaNames = new String[] { "clay", "ceramic" };
 		
 		setMaxStackSize(1);
 		setSize(EnumSize.MEDIUM);
