@@ -17,7 +17,7 @@ public class TNExcludedSlot extends SlotSize {
 	}
 	
 	@Override
-	public boolean isItemValid(ItemStack itemStack){
+	public boolean isItemValid(ItemStack itemStack) {
 		Item item = itemStack.getItem();
 		
 		for (int i = 0; i < allowed.size(); i++) {
@@ -30,7 +30,7 @@ public class TNExcludedSlot extends SlotSize {
 	}
 	
 	public TNExcludedSlot allow(Item... items) {
-		for(int i = 0; i < items.length; i++) {
+		for (int i = 0; i < items.length; i++) {
 			allowed.add(items[i]);
 		}
 		

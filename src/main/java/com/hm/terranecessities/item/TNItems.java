@@ -12,8 +12,7 @@ public class TNItems {
 		clayMoldDoubleKnife = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_knife_mold");
 		clayMoldDoubleHoe = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_hoe_mold");
 		
-		clayPot = new TNIPotteryMold().setUnlocalizedName("clay_pot");
-		
+		clayPot = new TNICookingPot().setUnlocalizedName("clay_pot");
 		
 	}
 	
@@ -23,6 +22,5 @@ public class TNItems {
 		
 		GameRegistry.registerItem(clayPot, clayPot.getUnlocalizedName());
 	}
-	
 	
 }
