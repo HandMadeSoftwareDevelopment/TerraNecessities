@@ -5,12 +5,20 @@ import net.minecraft.item.Item;
 
 public class TNItems {
 	private static String[] moldMetaNames = new String[] { "clay", "ceramic", "fired_copper", "fired_bronze", "fired_bismuth_bronze", "fired_black_bronze" };
+
+	public static Item thatchDoor;
+
 	//private static String[] partMetaNames = new String[] {"clay", "ceramic", "iron", "steel"};
 	public static Item clayMoldDoubleKnife, clayMoldDoubleHoe, cookingPot, clayMoldHammerPart, clayMoldTriggerPart, clayMoldHornPart, clayMoldWire,
-						clayMoldMusketShot, clayMoldArrowhead,
-						partBlunderbussStock, partFlintlockPistolStock, partFlintlockRifleStock, partFlintlockTrigger, partFlintlockHammer, partBlunderbussHorn,
-						partTriggerHammerMechanism, partSpring;
+						clayMoldMusketShot, clayMoldArrowhead;
+						
+	public static Item partBlunderbussStock, partFlintlockPistolStock, partFlintlockRifleStock, partFlintlockTrigger, partFlintlockHammer,
+						partBlunderbussHorn, partTriggerHammerMechanism, partSpring;
+	
 	public static void loadItems() {
+		// Miscellaneous
+		thatchDoor = new TNIThatchDoor().setUnlocalizedName("thatch_door");
+		
 		// Tool Molds
 		clayMoldDoubleKnife = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_knife_mold");
 		clayMoldDoubleHoe = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_hoe_mold");
@@ -35,7 +43,7 @@ public class TNItems {
 		partBlunderbussHorn = new Item().setUnlocalizedName("part_blunderbuss_horn");
 	}
 	
-	public static void registerItems() {
+	public static void registerPottery() {
 		GameRegistry.registerItem(clayMoldDoubleKnife, clayMoldDoubleKnife.getUnlocalizedName());
 		GameRegistry.registerItem(clayMoldDoubleHoe, clayMoldDoubleHoe.getUnlocalizedName());
 		GameRegistry.registerItem(clayMoldWire, clayMoldWire.getUnlocalizedName());
@@ -55,4 +63,9 @@ public class TNItems {
 		GameRegistry.registerItem(partBlunderbussHorn, partBlunderbussHorn.getUnlocalizedName());
 	}
 	
+	public static void registerItems() {
+		GameRegistry.registerItem(thatchDoor, thatchDoor.getUnlocalizedName());
+		
+		registerPottery();
+	}
 }

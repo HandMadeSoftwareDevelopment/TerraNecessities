@@ -12,11 +12,9 @@ public class TNIPottery extends ItemPotteryBase {
 	public TNIPottery() {
 		super();
 		
-		hasSubtypes = true;
 		metaNames = new String[] { "clay", "ceramic" };
 		
 		setCreativeTab(TNTabs.TN_ITEMS);
-		setFolder("pottery/");
 		setSize(EnumSize.SMALL);
 		setWeight(EnumWeight.MEDIUM);
 	}
