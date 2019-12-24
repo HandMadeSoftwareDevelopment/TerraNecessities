@@ -1,10 +1,8 @@
 package com.hm.terranecessities.item;
 
-import com.bioxx.tfc.Items.ItemTerra;
 import com.bioxx.tfc.api.Enums.EnumSize;
 import com.bioxx.tfc.api.Enums.EnumWeight;
 import com.hm.terranecessities.block.TNBlocks;
-import com.hm.terranecessities.core.TNTabs;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class TNIThatchDoor extends ItemTerra {
+public class TNIThatchDoor extends TNIBase {
 	public static void placeDoorBlock(World par0World, int par1, int par2, int par3, int par4, Block par5Block) {
 		byte var6 = 0;
 		byte var7 = 0;
@@ -57,8 +55,7 @@ public class TNIThatchDoor extends ItemTerra {
 		
 		maxStackSize = 1;
 		
-		setCreativeTab(TNTabs.TN_ITEMS);
-		setFolder("misc/");
+		setTextureName("misc/thatch_door");
 	}
 	
 	@Override
