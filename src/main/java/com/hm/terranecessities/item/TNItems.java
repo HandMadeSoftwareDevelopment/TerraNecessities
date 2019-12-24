@@ -7,6 +7,7 @@ public class TNItems {
 	private static String[] moldMetaNames = new String[] { "clay", "ceramic", "fired_copper", "fired_bronze", "fired_bismuth_bronze", "fired_black_bronze" };
 	//private static String[] partMetaNames = new String[] {"clay", "ceramic", "iron", "steel"};
 	public static Item clayMoldDoubleKnife, clayMoldDoubleHoe, cookingPot, clayMoldHammerPart, clayMoldTriggerPart, clayMoldHornPart, clayMoldWire,
+						clayMoldMusketShot, clayMoldArrowhead,
 						partBlunderbussStock, partFlintlockPistolStock, partFlintlockRifleStock, partFlintlockTrigger, partFlintlockHammer, partBlunderbussHorn,
 						partTriggerHammerMechanism, partSpring;
 	public static void loadItems() {
@@ -14,6 +15,10 @@ public class TNItems {
 		clayMoldDoubleKnife = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_knife_mold");
 		clayMoldDoubleHoe = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_hoe_mold");
 		clayMoldWire = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("wire_mold");
+		
+		// Ammo
+		clayMoldMusketShot = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("shot_mold");
+		clayMoldArrowhead = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("arrowhead_mold");
 		
 		// Cooking Utensils
 		cookingPot = new TNIPotteryMold().setUnlocalizedName("cooking_pot");
@@ -34,6 +39,9 @@ public class TNItems {
 		GameRegistry.registerItem(clayMoldDoubleKnife, clayMoldDoubleKnife.getUnlocalizedName());
 		GameRegistry.registerItem(clayMoldDoubleHoe, clayMoldDoubleHoe.getUnlocalizedName());
 		GameRegistry.registerItem(clayMoldWire, clayMoldWire.getUnlocalizedName());
+		
+		GameRegistry.registerItem(clayMoldMusketShot, clayMoldMusketShot.getUnlocalizedName());
+		GameRegistry.registerItem(clayMoldArrowhead, clayMoldArrowhead.getUnlocalizedName());
 		
 		GameRegistry.registerItem(cookingPot, cookingPot.getUnlocalizedName());
 		
