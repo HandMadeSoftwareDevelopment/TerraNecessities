@@ -1,5 +1,8 @@
 package com.hm.terranecessities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.bioxx.tfc.Handlers.Network.PacketPipeline;
 import com.hm.terranecessities.block.TNBlocks;
 import com.hm.terranecessities.core.TNRecipes;
@@ -17,6 +20,8 @@ import net.minecraftforge.common.MinecraftForge;
 public class TerraNecessities {
 	public static final String CLIENT_PROXY_CLASS = "com.hm.terranecessities.ClientProxy";
 	public static final String SERVER_PROXY_CLASS = "com.hm.terranecessities.CommonProxy";
+	
+	public static final Logger LOG = LogManager.getLogger(TNCore.MODID);
 	
 	@Mod.Instance("terranecessities")
 	public static TerraNecessities instance;

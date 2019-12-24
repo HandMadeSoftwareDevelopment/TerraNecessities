@@ -13,46 +13,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class TNIThatchDoor extends ItemTerra {
-	public TNIThatchDoor() {
-		super();
-		
-		maxStackSize = 1;
-		
-		setCreativeTab(TNTabs.TN_ITEMS);
-		setFolder("misc/");
-	}
-	
-	@Override
-	public boolean onItemUse(ItemStack is, EntityPlayer player, World world, int i, int j, int k, int side, float hitX, float hitY, float hitZ) {
-		Block block;
-		
-		if (side != 1) {
-			return false;
-		}
-		else {
-			++j;
-			block = TNBlocks.thatchDoor;
-			
-			if (player.canPlayerEdit(i, j, k, side, is) && player.canPlayerEdit(i, j + 1, k, side, is)) {
-				if (!block.canPlaceBlockAt(world, i, j, k)) {
-					return false;
-				}
-				else {
-					int var12 = MathHelper.floor_double((player.rotationYaw + 180.0F) * 4.0F / 360.0F - 0.5D) & 3;
-					
-					placeDoorBlock(world, i, j, k, var12, block);
-					
-					--is.stackSize;
-					
-					return true;
-				}
-			}
-			else {
-				return false;
-			}
-		}
-	}
-	
 	public static void placeDoorBlock(World par0World, int par1, int par2, int par3, int par4, Block par5Block) {
 		byte var6 = 0;
 		byte var7 = 0;
@@ -92,6 +52,15 @@ public class TNIThatchDoor extends ItemTerra {
 		par0World.notifyBlocksOfNeighborChange(par1, par2 + 1, par3, par5Block);
 	}
 	
+	public TNIThatchDoor() {
+		super();
+		
+		maxStackSize = 1;
+		
+		setCreativeTab(TNTabs.TN_ITEMS);
+		setFolder("misc/");
+	}
+	
 	@Override
 	public EnumSize getSize(ItemStack is) {
 		return EnumSize.HUGE;
@@ -100,5 +69,36 @@ public class TNIThatchDoor extends ItemTerra {
 	@Override
 	public EnumWeight getWeight(ItemStack is) {
 		return EnumWeight.HEAVY;
+	}
+	
+	@Override
+	public boolean onItemUse(ItemStack is, EntityPlayer player, World world, int i, int j, int k, int side, float hitX, float hitY, float hitZ) {
+		Block block;
+		
+		if (side != 1) {
+			return false;
+		}
+		else {
+			++j;
+			block = TNBlocks.thatchDoor;
+			
+			if (player.canPlayerEdit(i, j, k, side, is) && player.canPlayerEdit(i, j + 1, k, side, is)) {
+				if (!block.canPlaceBlockAt(world, i, j, k)) {
+					return false;
+				}
+				else {
+					int var12 = MathHelper.floor_double((player.rotationYaw + 180.0F) * 4.0F / 360.0F - 0.5D) & 3;
+					
+					placeDoorBlock(world, i, j, k, var12, block);
+					
+					--is.stackSize;
+					
+					return true;
+				}
+			}
+			else {
+				return false;
+			}
+		}
 	}
 }
