@@ -87,6 +87,46 @@ public class TNRecipes {
 			"     ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldHornPart, 1), new Object[]{
+			"     ",
+			"#####",
+			" ### ",
+			"     ",
+			"     ",
+			'#',
+			new ItemStack(TFCItems.flatClay, 1, 1)});
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldHammerPart, 1), new Object[]{
+			"  ###",
+			"   ##",
+			"   ##",
+			"##   ",
+			"     ",
+			'#',
+			new ItemStack(TFCItems.flatClay, 1, 1)});
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldTriggerPart, 1), new Object[]{
+			"     ",
+			"     ",
+			"#### ",
+			" #   ",
+			"     ",
+			'#',
+			new ItemStack(TFCItems.flatClay, 1, 1)});
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldTriggerPart, 1), new Object[]{
+			" # # ",
+			"     ",
+			" # # ",
+			"     ",
+			" # # ",
+			'#',
+			new ItemStack(TFCItems.flatClay, 1, 1)});
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldTriggerPart, 1), new Object[]{
+			"  #  ",
+			" ### ",
+			"#####",
+			"     ",
+			"     ",
+			'#',
+			new ItemStack(TFCItems.flatClay, 1, 1)});
 	}
 	
 	private static void registerMolding(CraftingManagerTFC manager) {
