@@ -44,6 +44,21 @@ public class TNRecipes {
 				new ItemStack(TNItems.cookingPot, 1),
 				0,
 				new ItemStack(TNItems.cookingPot, 1)));
+		manager.addRecipe(
+				new KilnRecipe(
+				new ItemStack(TNItems.clayMoldHammerPart, 1, 0),
+				0,
+				new ItemStack(TNItems.clayMoldHammerPart, 1, 1)));
+		manager.addRecipe(
+				new KilnRecipe(
+				new ItemStack(TNItems.clayMoldTriggerPart, 1, 0),
+				0,
+				new ItemStack(TNItems.clayMoldTriggerPart, 1, 1)));
+		manager.addRecipe(
+				new KilnRecipe(
+				new ItemStack(TNItems.clayMoldHornPart, 1, 0),
+				0,
+				new ItemStack(TNItems.clayMoldHornPart, 1, 1)));
 	}
 	
 	private static void registerKnapping(CraftingManagerTFC manager) {
@@ -68,6 +83,30 @@ public class TNRecipes {
 			" ### ",
 			"     ",
 			"     ",
+			"     ",
+			'#',
+			new ItemStack(TFCItems.flatClay, 1, 1)});
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldHornPart, 1), new Object[]{
+			"     ",
+			"#####",
+			" ### ",
+			"     ",
+			"     ",
+			'#',
+			new ItemStack(TFCItems.flatClay, 1, 1)});
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldHammerPart, 1), new Object[]{
+			"  ###",
+			"   ##",
+			"   ##",
+			"##   ",
+			"     ",
+			'#',
+			new ItemStack(TFCItems.flatClay, 1, 1)});
+		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldTriggerPart, 1), new Object[]{
+			"     ",
+			"     ",
+			"#### ",
+			" #   ",
 			"     ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
