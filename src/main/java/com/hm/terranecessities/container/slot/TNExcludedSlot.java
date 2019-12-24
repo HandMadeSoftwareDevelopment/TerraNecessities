@@ -16,6 +16,14 @@ public class TNExcludedSlot extends SlotSize {
 		super(inventory, i, j, k);
 	}
 	
+	public TNExcludedSlot allow(Item... items) {
+		for (int i = 0; i < items.length; i++) {
+			allowed.add(items[i]);
+		}
+		
+		return this;
+	}
+	
 	@Override
 	public boolean isItemValid(ItemStack itemStack) {
 		Item item = itemStack.getItem();
@@ -27,13 +35,5 @@ public class TNExcludedSlot extends SlotSize {
 		}
 		
 		return false;
-	}
-	
-	public TNExcludedSlot allow(Item... items) {
-		for (int i = 0; i < items.length; i++) {
-			allowed.add(items[i]);
-		}
-		
-		return this;
 	}
 }

@@ -1,26 +1,50 @@
 package com.hm.terranecessities.item;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.hm.terranecessities.TNCore;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 
 public class TNIPotteryMold extends TNIPottery {
-	private IIcon bismuthBronzeIcon, blackBronzeIcon, bronzeIcon, copperIcon;
+	private IIcon[] icons;
 	
-	@Override
-	public void registerIcons(IIconRegister registerer) {
-		String prepend = TNCore.MODID + ":" + textureFolder + getUnlocalizedName().replaceFirst("item.", "");
+	public TNIPotteryMold(String name, String... metaNames) {
+		super();
 		
-		clayIcon = registerer.registerIcon(prepend + "_" + metaNames[0]);
-		ceramicIcon = registerer.registerIcon(prepend + "_" + metaNames[1]);
+		this.metaNames = addMetaNames(metaNames);
 		
-		if (metaNames.length > 2) {
-			copperIcon = registerer.registerIcon(prepend + "_" + metaNames[2]);
-			bronzeIcon = registerer.registerIcon(prepend + "_" + metaNames[3]);
-			bismuthBronzeIcon = registerer.registerIcon(prepend + "_" + metaNames[4]);
-			blackBronzeIcon = registerer.registerIcon(prepend + "_" + metaNames[5]);
+		icons = new IIcon[this.metaNames.length];
+		
+		setUnlocalizedName(name);
+	}
+	
+	private String[] addMetaNames(String[] metaNames) {
+		List<String> names = new ArrayList<>();
+		boolean usable;
+		
+		names.addAll(Arrays.asList(this.metaNames));
+		
+		for (int i = 0; i < metaNames.length; i++) {
+			usable = true;
+			
+			for (int j = 0; j < names.size(); j++) {
+				if (metaNames[i].equals(names.get(j))) {
+					usable = false;
+					break;
+				}
+			}
+			
+			if (usable) {
+				names.add(metaNames[i]);
+			}
 		}
+		
+		// create empty array to fill with elements and return it.
+		return names.toArray(new String[0]);
 	}
 	
 	@Override
@@ -31,20 +55,39 @@ public class TNIPotteryMold extends TNIPottery {
 		
 		switch (damage) {
 		case 0:
-			return this.clayIcon;
+			return getMoldMetaIcon("clay");
 		case 1:
-			return this.ceramicIcon;
+			return getMoldMetaIcon("ceramic");
 		case 2:
-			return this.copperIcon;
+			return getMoldMetaIcon("fired_copper");
 		case 3:
-			return this.bronzeIcon;
+			return getMoldMetaIcon("fired_bronze");
 		case 4:
-			return this.bismuthBronzeIcon;
+			return getMoldMetaIcon("fired_bismuth_bronze");
 		case 5:
-			return this.blackBronzeIcon;
+			return getMoldMetaIcon("fired_black_bronze");
 		
 		default:
 			return this.clayIcon;
+		}
+	}
+	
+	private IIcon getMoldMetaIcon(String metaName) {
+		for (int i = 0; i < metaNames.length; i++) {
+			if (metaNames[i].equals(metaName)) {
+				return icons[i];
+			}
+		}
+		
+		return this.clayIcon;
+	}
+	
+	@Override
+	public void registerIcons(IIconRegister register) {
+		String prepend = TNCore.MODID + ":" + textureFolder + getUnlocalizedName().replaceFirst("item.", "");
+		
+		for (int i = 0; i < metaNames.length; i++) {
+			icons[i] = register.registerIcon(prepend + "_" + metaNames[i]);
 		}
 	}
 }
