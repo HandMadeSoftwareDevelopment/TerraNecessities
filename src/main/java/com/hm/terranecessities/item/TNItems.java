@@ -1,5 +1,7 @@
 package com.hm.terranecessities.item;
 
+import com.hm.terranecessities.TNCore;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
