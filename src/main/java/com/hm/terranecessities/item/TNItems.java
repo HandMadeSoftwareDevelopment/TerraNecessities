@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 
 public class TNItems {
 	private static String[] moldMetaNames = new String[] { "clay", "ceramic", "fired_copper", "fired_bronze", "fired_bismuth_bronze", "fired_black_bronze" };
-	private static String[] partMetaNames = new String[] {"clay", "ceramic", "iron", "steel"};
+	//private static String[] partMetaNames = new String[] {"clay", "ceramic", "iron", "steel"};
 	public static Item clayMoldDoubleKnife, clayMoldDoubleHoe, cookingPot, clayMoldHammerPart, clayMoldTriggerPart, clayMoldHornPart, clayMoldWire,
 						partBlunderbussStock, partFlintlockPistolStock, partFlintlockRifleStock, partFlintlockTrigger, partFlintlockHammer, partBlunderbussHorn,
 						partTriggerHammerMechanism, partSpring;
@@ -19,9 +19,9 @@ public class TNItems {
 		cookingPot = new TNIPotteryMold().setUnlocalizedName("cooking_pot");
 		
 		// Weapon Part Molds
-		clayMoldTriggerPart = new TNIPotteryMold().setMetaNames(partMetaNames).setUnlocalizedName("part_trigger_mechanism");
-		clayMoldHammerPart = new TNIPotteryMold().setMetaNames(partMetaNames).setUnlocalizedName("part_hammer_mechanism");
-		clayMoldHornPart = new TNIPotteryMold().setMetaNames(partMetaNames).setUnlocalizedName("part_blunderbuss_horn");
+		clayMoldTriggerPart = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("trigger_mechanism_mold");
+		clayMoldHammerPart = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("hammer_mechanism_mold");
+		clayMoldHornPart = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("blunderbuss_horn_mold");
 		
 		// Weapon Parts
 		partBlunderbussStock = new Item().setUnlocalizedName("part_blunderbuss_stock");
