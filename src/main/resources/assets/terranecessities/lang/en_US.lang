@@ -5,42 +5,55 @@ item.double_knife_mold.fired_copper.name=Double Knife Mold (Copper)
 item.double_knife_mold.fired_bronze.name=Double Knife Mold (Bronze)
 item.double_knife_mold.fired_bismuth_bronze.name=Double Knife Mold (Bismuth Bronze)
 item.double_knife_mold.fired_black_bronze.name=Double Knife Mold (Black Bronze)
+
 item.double_hoe_mold.clay.name=Clay Double Hoe Mold
 item.double_hoe_mold.ceramic.name=Double Hoe Mold
 item.double_hoe_mold.fired_copper.name=Double Hoe Mold (Copper)
 item.double_hoe_mold.fired_bronze.name=Double Hoe Mold (Bronze)
 item.double_hoe_mold.fired_bismuth_bronze.name=Double Hoe Mold (Bismuth Bronze)
 item.double_hoe_mold.fired_black_bronze.name=Double Hoe Mold (Black Bronze)
+
 item.arrowhead_mold.clay.name=Clay Arrowhead Mold
 item.arrowhead_mold.ceramic.name=Arrowhead Mold
 item.arrowhead_mold.fired_copper.name=Arrowhead Mold (Copper)
 item.arrowhead_mold.fired_bronze.name=Arrowhead Mold (Bronze)
 item.arrowhead_mold.fired_bismuth_bronze.name=Arrowhead Mold (Bismuth Bronze)
 item.arrowhead_mold.fired_black_bronze.name=Arrowhead Mold (Black Bronze)
+
 item.spearhead_mold.clay.name=Clay Spearhead Mold
 item.spearhead_mold.ceramic.name=Spearhead Mold
 item.spearhead_mold.fired_copper.name=Spearhead Mold (Copper)
 item.spearhead_mold.fired_bronze.name=Spearhead Mold (Bronze)
 item.spearhead_mold.fired_bismuth_bronze.name=Spearhead Mold (Bismuth Bronze)
 item.spearhead_mold.fired_black_bronze.name=Spearhead Mold (Black Bronze)
-item.shot.clay.name=Clay Shot Mold
-item.shot.ceramic.name=Shot Mold
-item.shot.fired_copper.name=Shot Mold (Copper)
-item.shot.fired_lead.name=Shot Mold (Lead)
-item.shot.fired_zinc.name=Shot Mold (Zinc)
-item.shot.fired_silver.name=Shot Mold (Silver)
+
+item.shot_mold.clay.name=Clay Shot Mold
+item.shot_mold.ceramic.name=Shot Mold
+item.shot_mold.fired_copper.name=Shot Mold (Copper)
+item.shot_mold.fired_lead.name=Shot Mold (Lead)
+item.shot_mold.fired_zinc.name=Shot Mold (Zinc)
+item.shot_mold.fired_silver.name=Shot Mold (Silver)
+
 item.shot.lead_shot.name=Lead Shot
 item.shot.silver_shot.name=Silver Shot
 item.shot.zinc_shot.name=Zinc Shot
 item.shot.copper_shot.name=Copper Shot
+
 item.spearhead.copper_spearhead=Copper Spearhead
 item.spearhead.bronze_spearhead=Bronze Spearhead
 item.spearhead.bismuth_bronze_spearhead=Bismuth Bronze Spearhead
 item.spearhead.black_bronze_spearhead=Black Bronze Spearhead
+
 item.arrowhead.copper_spearhead=Copper Arrowhead
 item.arrowhead.bronze_spearhead=Bronze Arrowhead
 item.arrowhead.bismuth_bronze_spearhead=Bismuth Bronze Arrowhead
 item.arrowhead.black_bronze_spearhead=Black Bronze Arrowhead
+
+item.thatch_door.name=Thatch Door
+
+item.wire_mold.clay.name=Clay Wire Mold
+item.wire_mold.ceramic.name=Wire Mold
+item.wire_mold.fired_copper.name=Wire Mold (Copper)
 
 item.cooking_pot.clay.name=Clay Cooking Pot
 item.cooking_pot.ceramic.name=Cooking Pot
