@@ -15,12 +15,8 @@ import net.minecraft.world.World;
 public class TNGKiln extends GuiContainerTFC {
 	public static ResourceLocation texture = new ResourceLocation(TNCore.MODID, TNCore.GUIPATH + "kiln.png");
 	
-	private TNEKiln kiln;
-	
 	public TNGKiln(InventoryPlayer inventory, TNEKiln te, World world, int x, int y, int z) {
 		super(new TNCKiln(inventory, te, world, x, y, z), 208, 117);
-		
-		kiln = te;
 	}
 	
 	@Override

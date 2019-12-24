@@ -11,14 +11,21 @@ import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
 
 public class TNAchievements {
-	public static AchievementPage page;
+	private static List<Achievement> achievementList;
 	public static Achievement[] achievements;
 	
 	public static Achievement atSoup, doubleEfficiency;
 	
-	private static List<Achievement> achievementList;
+	public static AchievementPage page;
 	
-	private TNAchievements() {
+	private static Achievement createAchievement(String id, String name, int x, int y, ItemStack stack, Achievement required) {
+		Achievement a;
+		
+		a = new Achievement(id, name, x, y, stack, required).registerStat();
+		
+		achievementList.add(a);
+		
+		return a;
 	}
 	
 	public static void registerAchievements() {
@@ -37,13 +44,6 @@ public class TNAchievements {
 		return;
 	}
 	
-	private static Achievement createAchievement(String id, String name, int x, int y, ItemStack stack, Achievement required) {
-		Achievement a;
-		
-		a = new Achievement(id, name, x, y, stack, required).registerStat();
-		
-		achievementList.add(a);
-		
-		return a;
+	private TNAchievements() {
 	}
 }

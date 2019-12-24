@@ -40,6 +40,13 @@ public class TNCWoodCutter extends ContainerTFC {
 	}
 	
 	@Override
+	public void onContainerClosed(EntityPlayer player) {
+		super.onContainerClosed(player);
+		
+		woodCutter.closeInventory();
+	}
+	
+	@Override
 	public ItemStack transferStackInSlotTFC(EntityPlayer player, int index) {
 		ItemStack stack = null;
 		Slot slot = (Slot) this.inventorySlots.get(index);
@@ -61,7 +68,8 @@ public class TNCWoodCutter extends ContainerTFC {
 			
 			if (slotStack.stackSize <= 0) {
 				slot.putStack(null);
-			} else {
+			}
+			else {
 				slot.onSlotChanged();
 			}
 			
@@ -73,12 +81,5 @@ public class TNCWoodCutter extends ContainerTFC {
 		}
 		
 		return stack;
-	}
-	
-	@Override
-	public void onContainerClosed(EntityPlayer player) {
-		super.onContainerClosed(player);
-		
-		woodCutter.closeInventory();
 	}
 }

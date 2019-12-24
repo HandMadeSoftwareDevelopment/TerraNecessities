@@ -14,5 +14,4 @@ public class TNTabs extends TFCTabs {
 	public TNTabs(String par2Str, int icon) {
 		super(par2Str);
 	}
-	
 }
