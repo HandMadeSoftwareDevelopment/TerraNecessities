@@ -11,9 +11,9 @@ public class TNItems {
 	public static Item clayMoldDoubleKnife, clayMoldDoubleHoe, cookingPot;
 	
 	public static void loadItems() {
+		thatchDoor = new TNIThatchDoor().setUnlocalizedName("thatch_door");
 		
-//		thatchDoor = new TNIThatchDoor().setUnlocalizedName("thatch_door");
-		
+		// pottery
 		clayMoldDoubleKnife = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_knife_mold");
 		clayMoldDoubleHoe = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("double_hoe_mold");
 		
@@ -28,7 +28,7 @@ public class TNItems {
 	}
 	
 	public static void registerItems() {
-//		GameRegistry.registerItem(thatchDoor, thatchDoor.getUnlocalizedName());
+		GameRegistry.registerItem(thatchDoor, thatchDoor.getUnlocalizedName());
 		
 		registerPottery();
 	}
