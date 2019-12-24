@@ -17,7 +17,7 @@ public class TNItems {
 		clayMoldWire = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("wire_mold");
 		
 		// Ammo
-		clayMoldMusketShot = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("shot_mold");
+		clayMoldMusketShot = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("shot");
 		clayMoldArrowhead = new TNIPotteryMold().setMetaNames(moldMetaNames).setUnlocalizedName("arrowhead_mold");
 		
 		// Cooking Utensils
