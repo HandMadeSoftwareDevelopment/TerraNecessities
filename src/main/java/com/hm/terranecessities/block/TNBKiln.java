@@ -18,8 +18,8 @@ public class TNBKiln extends BlockTerraContainer {
 		
 		setBlockName("TNBKiln");
 		setBlockTextureName(TNCore.MODID + ":snow");
+		//setDefaultState()
 		setHardness(4.f);
-		setCreativeTab(TNTabs.TN_ITEMS);
 	}
 	
 	@Override

@@ -14,10 +14,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.AxisAlignedBB;
 
 public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	public ItemStack[] storage = new ItemStack[4];
+	
+	private void chopLumber() {
+		
+	}
 	
 	@Override
 	public void closeInventory() {
@@ -27,22 +32,37 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	}
 	
 	@Override
-	public void createInitNBT(NBTTagCompound arg0) {
+	public void createInitNBT(NBTTagCompound nbt) {
+		NBTTagList tags = new NBTTagList();
+		
+		for (int i = 0; i < storage.length; i++) {
+			if (storage[i] != null) {
+				NBTTagCompound tag = new NBTTagCompound();
+				
+				tag.setByte("Slot", (byte) i);
+				
+				storage[i].writeToNBT(tag);
+				
+				tags.appendTag(tag);
+			}
+		}
+		
+		nbt.setTag("Items", tags);
 	}
 	
 	@Override
-	public ItemStack decrStackSize(int i, int j) {
+	public ItemStack decrStackSize(int i, int count) {
 		ItemStack stack;
 		
 		if (storage[i] != null) {
-			if (storage[i].stackSize <= j) {
+			if (storage[i].stackSize <= count) {
 				stack = storage[i];
 				storage[i] = null;
 				
 				return stack;
 			}
 			
-			stack = storage[i].splitStack(j);
+			stack = storage[i].splitStack(count);
 			
 			if (storage[i].stackSize == 0) {
 				storage[i] = null;
@@ -71,17 +91,19 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 				item.motionZ = (float) rand.nextGaussian() * f3;
 				
 				worldObj.spawnEntityInWorld(item);
+				
+				storage[i] = null;
 			}
 		}
 	}
 	
 	public void ejectItem(int index) {
-		float f3 = 0.05F;
 		EntityItem item;
 		Random rand = new Random();
 		float f = rand.nextFloat() * 0.8F + 0.1F;
 		float f1 = rand.nextFloat() * 2.0F + 0.4F;
 		float f2 = rand.nextFloat() * 0.8F + 0.1F;
+		float f3 = 0.05F;
 		
 		if (storage[index] != null) {
 			item = new EntityItem(worldObj, xCoord + f, yCoord + f1, zCoord + f2, storage[index]);
@@ -124,7 +146,20 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	}
 	
 	@Override
-	public void handleInitPacket(NBTTagCompound arg0) {
+	public void handleInitPacket(NBTTagCompound nbt) {
+		NBTTagList tags = nbt.getTagList("Items", 10);
+		
+		storage = new ItemStack[getSizeInventory()];
+		
+		for (int i = 0; i < tags.tagCount(); i++) {
+			NBTTagCompound tag = tags.getCompoundTagAt(i);
+			
+			byte byte0 = tag.getByte("Slot");
+			
+			if (byte0 >= 0 && byte0 < storage.length) {
+				storage[byte0] = ItemStack.loadItemStackFromNBT(tag);
+			}
+		}
 	}
 	
 	@Override
@@ -151,6 +186,25 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	}
 	
 	@Override
+	public void readFromNBT(NBTTagCompound nbt) {
+		super.readFromNBT(nbt);
+		
+		NBTTagList tags = nbt.getTagList("Items", 10);
+		
+		storage = new ItemStack[getSizeInventory()];
+		
+		for (int i = 0; i < tags.tagCount(); i++) {
+			NBTTagCompound data = tags.getCompoundTagAt(i);
+			
+			byte byte0 = data.getByte("Slot");
+			
+			if (byte0 >= 0 && byte0 < storage.length) {
+				storage[byte0] = ItemStack.loadItemStackFromNBT(data);
+			}
+		}
+	}
+	
+	@Override
 	public void setInventorySlotContents(int i, ItemStack stack) {
 		if (!TFC_Core.areItemsEqual(storage[i], stack)) {
 			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
@@ -162,5 +216,26 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	@Override
 	public void updateEntity() {
 		TFC_Core.handleItemTicking(this, worldObj, xCoord, yCoord, zCoord);
+	}
+	
+	@Override
+	public void writeToNBT(NBTTagCompound nbt) {
+		super.writeToNBT(nbt);
+		
+		NBTTagList tags = new NBTTagList();
+		
+		for (int i = 0; i < storage.length; ++i) {
+			if (storage[i] != null) {
+				NBTTagCompound tag = new NBTTagCompound();
+				
+				tag.setByte("Slot", (byte) i);
+				
+				storage[i].writeToNBT(tag);
+				
+				tags.appendTag(tag);
+			}
+		}
+		
+		nbt.setTag("Items", tags);
 	}
 }

@@ -22,6 +22,7 @@ public class TNCWoodCutter extends ContainerTFC {
 		this.woodCutter = woodCutter;
 		
 		woodCutter.openInventory();
+		
 		layoutContainer(player, woodCutter, 0, 0);
 		
 		PlayerInventory.buildInventoryLayout(this, player, 8, 90, false, true);
@@ -49,7 +50,7 @@ public class TNCWoodCutter extends ContainerTFC {
 	@Override
 	public ItemStack transferStackInSlotTFC(EntityPlayer player, int index) {
 		ItemStack stack = null;
-		Slot slot = (Slot) this.inventorySlots.get(index);
+		Slot slot = (Slot) inventorySlots.get(index);
 		
 		if (slot != null && slot.getHasStack()) {
 			ItemStack slotStack = slot.getStack();

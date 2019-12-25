@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import com.bioxx.tfc.Blocks.BlockTerraContainer;
 import com.bioxx.tfc.Core.TFC_Textures;
 import com.bioxx.tfc.TileEntities.TEFoodPrep;
+import com.hm.terranecessities.core.TNTabs;
 import com.hm.terranecessities.entity.TNEWoodCutter;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.particle.EffectRenderer;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,10 +27,11 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 public class TNBWoodCutter extends BlockTerraContainer {
 	public TNBWoodCutter() {
-		super();
+		super(Material.wood);
 		
 		setBlockBounds(0, 0, 0, 1, 0.15f, 1);
 		setBlockName("TNWoodCutter");
+		setCreativeTab(TNTabs.TN_ITEMS);
 		setHardness(1.f);
 	}
 	
@@ -104,10 +107,10 @@ public class TNBWoodCutter extends BlockTerraContainer {
 	}
 	
 	@Override
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityplayer, int side, float hitX, float hitY, float hitZ) {
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
 			TNEWoodCutter te = (TNEWoodCutter) world.getTileEntity(x, y, z);
-			te.openGUI(entityplayer);
+			te.openGUI(player);
 		}
 		
 		return true;
