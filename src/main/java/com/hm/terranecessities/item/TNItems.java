@@ -1,8 +1,11 @@
 package com.hm.terranecessities.item;
 
+import com.hm.terranecessities.TNCore;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 
+@SuppressWarnings("unused")
 public class TNItems {
 	private static String[] moldMetaNames = new String[] { "fired_copper", "fired_bronze", "fired_bismuth_bronze", "fired_black_bronze" };
 	// private static String[] partMetaNames = new String[] { "iron", "steel" };
@@ -10,7 +13,7 @@ public class TNItems {
 	public static Item thatchDoor;
 	
 	public static Item clayMoldDoubleKnife, clayMoldDoubleHoe, cookingPot, clayMoldHammerPart, clayMoldTriggerPart,
-						clayMoldHornPart, clayMoldWire, clayMoldMusketShot, clayMoldArrowhead;
+						clayMoldHornPart, clayMoldWire, clayMoldMusketShot, clayMoldArrowhead, clayMoldSpearhead;
 	
 	public static Item partBlunderbussStock, partFlintlockPistolStock, partFlintlockRifleStock, partFlintlockTrigger,
 						partFlintlockHammer, partBlunderbussHorn, partTriggerHammerMechanism, partSpring;
@@ -24,10 +27,10 @@ public class TNItems {
 		clayMoldDoubleHoe = new TNIPotteryMold("double_hoe_mold", moldMetaNames);
 		clayMoldWire = new TNIPotteryMold("wire_mold", "fired_copper");
 		
-		// Ammo
+		// Ammo/Head Molds
 		clayMoldMusketShot = new TNIPotteryMold("shot_mold", "fired_copper", "fired_lead", "fired_silver", "fired_zinc");
 		clayMoldArrowhead = new TNIPotteryMold("arrowhead_mold", "fired_copper", "fired_bronze", "fired_bismuth_bronze", "fired_black_bronze");
-		
+		clayMoldSpearhead = new TNIPotteryMold("spearhead_mold", "fired_copper", "fired_bronze", "fired_bismuth_bronze", "fired_black_bronze");
 		// Cooking Utensils
 		cookingPot = new TNIPotteryMold("cooking_pot");
 		
@@ -37,10 +40,13 @@ public class TNItems {
 //		clayMoldHornPart = new TNIPotteryMold("blunderbuss_horn_mold", "fired_wrought_iron");
 		
 		// Weapon Parts
-		partBlunderbussStock = new Item().setUnlocalizedName("part_blunderbuss_stock");
-		partFlintlockPistolStock = new Item().setUnlocalizedName("part_flintlock_pistol_stock");
-		partFlintlockRifleStock = new Item().setUnlocalizedName("part_flintlock_rifle_stock");
-		partBlunderbussHorn = new Item().setUnlocalizedName("part_blunderbuss_horn");
+		partBlunderbussStock = new Item().setUnlocalizedName("part_blunderbuss_stock").setTextureName("parts/part_blunderbuss_stock");
+		partFlintlockPistolStock = new Item().setUnlocalizedName("part_flintlock_pistol_stock").setTextureName("parts/part_flintlock_pistol_stock");
+		partFlintlockRifleStock = new Item().setUnlocalizedName("part_flintlock_rifle_stock").setTextureName("parts/part_flintlock_rifle_stock");
+		partBlunderbussHorn = new Item().setUnlocalizedName("part_blunderbuss_horn").setTextureName("parts/part_blunderbuss_horn");
+		
+		// Ammo Items
+		
 	}
 	
 	public static void registerItems() {
@@ -56,6 +62,7 @@ public class TNItems {
 		
 		GameRegistry.registerItem(clayMoldMusketShot, clayMoldMusketShot.getUnlocalizedName());
 		GameRegistry.registerItem(clayMoldArrowhead, clayMoldArrowhead.getUnlocalizedName());
+		GameRegistry.registerItem(clayMoldSpearhead, clayMoldSpearhead.getUnlocalizedName());
 		
 		GameRegistry.registerItem(cookingPot, cookingPot.getUnlocalizedName());
 		
