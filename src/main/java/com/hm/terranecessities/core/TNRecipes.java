@@ -182,6 +182,7 @@ public class TNRecipes {
 	
 	public static void registerRecipes() {
 		CraftingManagerTFC craftingManager;
+		AnvilManager anvilManager;
 		
 		GameRegistry.addRecipe(new ItemStack(TNItems.thatchDoor, 1),
 			"01",
@@ -195,7 +196,7 @@ public class TNRecipes {
 //				Recipes.getStackNoTemp(new ItemStack(TNItems.clayMoldDoubleHoe, 1, 2)));
 		
 		craftingManager = CraftingManagerTFC.getInstance();
-		AnvilManager anvilManager = AnvilManager.getInstance();
+		anvilManager = AnvilManager.getInstance();
 		
 		registerFueling();
 		registerKnapping(craftingManager);
