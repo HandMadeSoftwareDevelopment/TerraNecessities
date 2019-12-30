@@ -78,6 +78,7 @@ public class TNRecipes {
 	}
 	
 	private static void registerKnapping(CraftingManagerTFC manager) {
+		// Clay Knapping
 		manager.addRecipe(new ItemStack(TNItems.clayMoldDoubleKnife, 1), new Object[] {
 			" # # ",
 			"## ##",
@@ -166,6 +167,8 @@ public class TNRecipes {
 			"     ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
+		
+		// Stone Knapping
 	}
 	
 	private static void registerMolding(CraftingManagerTFC manager) {
@@ -204,6 +207,7 @@ public class TNRecipes {
 		registerMolding(craftingManager);
 		registerTooling();
 		registerForging(anvilManager);
+		registerShapelessRecipes();
 	}
 	
 	private static void registerTooling() {
@@ -224,5 +228,10 @@ public class TNRecipes {
 				Recipes.getStackNoTemp(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 4)));
 		GameRegistry.addShapelessRecipe(new ItemStack(TFCItems.blackBronzeKnifeHead, 2),
 				Recipes.getStackNoTemp(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 5)));
+	}
+
+	private static void registerShapelessRecipes() {
+		GameRegistry.addShapelessRecipe(new ItemStack(TNItems.partTriggerHammerMechanism, 1), 
+				new ItemStack(TNItems.partTriggerMechanism, 1), new ItemStack(TNItems.partHammerMechanism, 1), new ItemStack(TNItems.partSpring, 1));
 	}
 }
