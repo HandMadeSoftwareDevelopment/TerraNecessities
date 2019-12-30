@@ -1,6 +1,7 @@
 package com.hm.terranecessities.item;
 
 import com.hm.terranecessities.TNCore;
+import com.hm.terranecessities.core.TNTabs;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
@@ -45,14 +46,14 @@ public class TNItems {
 		clayMoldHornPart = new TNIPotteryMold("blunderbuss_horn_mold", "fired_wrought_iron");
 		
 		// Weapon Parts
-		partBlunderbussStock = new Item().setUnlocalizedName("part_blunderbuss_stock").setTextureName("parts/part_blunderbuss_stock");
-		partFlintlockPistolStock = new Item().setUnlocalizedName("part_flintlock_pistol_stock").setTextureName("parts/part_flintlock_pistol_stock");
-		partFlintlockRifleStock = new Item().setUnlocalizedName("part_flintlock_rifle_stock").setTextureName("parts/part_flintlock_rifle_stock");
-		partBlunderbussHorn = new Item().setUnlocalizedName("part_blunderbuss_horn").setTextureName("parts/part_blunderbuss_horn");
-		partTriggerMechanism = new Item().setUnlocalizedName("part_trigger_mechanism");
-		partHammerMechanism =  new Item().setUnlocalizedName("part_hammer_mechanism");
-		partTriggerHammerMechanism = new Item().setUnlocalizedName("part_hammer_trigger");
-		partSpring = new Item().setUnlocalizedName("part_spring");
+		partBlunderbussStock = new Item().setUnlocalizedName("part_blunderbuss_stock").setTextureName("parts/part_blunderbuss_stock").setCreativeTab(TNTabs.TN_ITEMS);
+		partFlintlockPistolStock = new Item().setUnlocalizedName("part_flintlock_pistol_stock").setTextureName("parts/part_flintlock_pistol_stock").setCreativeTab(TNTabs.TN_ITEMS);
+		partFlintlockRifleStock = new Item().setUnlocalizedName("part_flintlock_rifle_stock").setTextureName("parts/part_flintlock_rifle_stock").setCreativeTab(TNTabs.TN_ITEMS);
+		partBlunderbussHorn = new Item().setUnlocalizedName("part_blunderbuss_horn").setTextureName("parts/part_blunderbuss_horn").setCreativeTab(TNTabs.TN_ITEMS);
+		partTriggerMechanism = new Item().setUnlocalizedName("part_trigger_mechanism").setCreativeTab(TNTabs.TN_ITEMS);
+		partHammerMechanism =  new Item().setUnlocalizedName("part_hammer_mechanism").setCreativeTab(TNTabs.TN_ITEMS);
+		partTriggerHammerMechanism = new Item().setUnlocalizedName("part_hammer_trigger").setCreativeTab(TNTabs.TN_ITEMS);
+		partSpring = new Item().setUnlocalizedName("part_spring").setCreativeTab(TNTabs.TN_ITEMS);
 		// Ammo Items
 		
 	}
