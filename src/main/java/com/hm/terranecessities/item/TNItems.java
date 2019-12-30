@@ -9,7 +9,6 @@ import net.minecraft.item.Item;
 @SuppressWarnings("unused")
 public class TNItems {
 	private static String[] moldMetaNames = new String[] { "fired_copper", "fired_bronze", "fired_bismuth_bronze", "fired_black_bronze" };
-	// private static String[] partMetaNames = new String[] { "iron", "steel" };
 	
 	public static Item thatchDoor;
 	
