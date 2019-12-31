@@ -233,5 +233,6 @@ public class TNRecipes {
 	private static void registerShapelessRecipes() {
 		GameRegistry.addShapelessRecipe(new ItemStack(TNItems.partTriggerHammerMechanism, 1), 
 				new ItemStack(TNItems.partTriggerMechanism, 1), new ItemStack(TNItems.partHammerMechanism, 1), new ItemStack(TNItems.partSpring, 1));
+		// GameRegistry.addShapelessRecipe(poop, caca);
 	}
 }

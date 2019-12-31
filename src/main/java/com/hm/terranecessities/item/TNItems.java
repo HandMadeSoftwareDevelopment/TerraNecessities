@@ -17,7 +17,7 @@ public class TNItems {
 	
 	public static Item partBlunderbussStock, partFlintlockPistolStock, partFlintlockRifleStock, partFlintlockTrigger,
 						partFlintlockHammer, partBlunderbussHorn, partTriggerHammerMechanism, partSpring, partTriggerMechanism,
-						partHammerMechanism;
+						partHammerMechanism, partPistolBarrel, partRifleBarrel, partBlunderbussBarrel;
 	
 	public static Item metalSpearhead, stoneSpearhead, stoneSpear, metalSpear, metalArrowhead, metalArrow;
 	
@@ -53,6 +53,9 @@ public class TNItems {
 		partHammerMechanism =  new Item().setUnlocalizedName("part_hammer_mechanism").setCreativeTab(TNTabs.TN_ITEMS);
 		partTriggerHammerMechanism = new Item().setUnlocalizedName("part_hammer_trigger").setCreativeTab(TNTabs.TN_ITEMS);
 		partSpring = new Item().setUnlocalizedName("part_spring").setCreativeTab(TNTabs.TN_ITEMS);
+		partPistolBarrel = new Item().setUnlocalizedName("part_pistol_barrel").setCreativeTab(TNTabs.TN_ITEMS);
+		partRifleBarrel = new Item().setUnlocalizedName("part_rifle_barrel").setCreativeTab(TNTabs.TN_ITEMS);
+		partBlunderbussBarrel = new Item().setUnlocalizedName("part_blunderbuss_barrel").setCreativeTab(TNTabs.TN_ITEMS);
 		// Ammo Items
 		
 	}
@@ -69,6 +72,9 @@ public class TNItems {
 		GameRegistry.registerItem(partHammerMechanism, partHammerMechanism.getUnlocalizedName());
 		GameRegistry.registerItem(partTriggerHammerMechanism, partTriggerHammerMechanism.getUnlocalizedName());
 		GameRegistry.registerItem(partSpring, partSpring.getUnlocalizedName());
+		GameRegistry.registerItem(partPistolBarrel, partPistolBarrel.getUnlocalizedName());
+		GameRegistry.registerItem(partRifleBarrel, partRifleBarrel.getUnlocalizedName());
+		GameRegistry.registerItem(partBlunderbussBarrel, partBlunderbussBarrel.getUnlocalizedName());
 		
 		registerPottery();
 	}
