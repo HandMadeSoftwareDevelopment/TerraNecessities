@@ -2,6 +2,7 @@ package com.hm.terranecessities.core;
 
 import com.bioxx.tfc.Core.Recipes;
 import com.bioxx.tfc.Handlers.TFCFuelHandler;
+import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import com.bioxx.tfc.api.Crafting.AnvilManager;
 import com.bioxx.tfc.api.Crafting.CraftingManagerTFC;
@@ -18,16 +19,10 @@ public class TNRecipes {
 	}
 	
 	private static void registerForging(AnvilManager manager) {
-		// i brokeded all this
-		manager = AnvilManager.getInstance();
-		
+		// Anvil recipes go here.
 	}
 	
-	private static void registerKilning() {
-		KilnCraftingManager manager;
-		
-		manager = KilnCraftingManager.getInstance();
-		
+	private static void registerKilning(KilnCraftingManager manager) {
 		manager.addRecipe(
 			new KilnRecipe(
 				new ItemStack(TNItems.clayMoldDoubleHoe, 1, 0),
@@ -118,7 +113,7 @@ public class TNRecipes {
 			"     ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldHammerPart, 1), new Object[]{
+		manager.addRecipe(new ItemStack(TNItems.clayMoldHammerPart, 1), new Object[]{
 			"  ###",
 			"   ##",
 			"   ##",
@@ -126,7 +121,7 @@ public class TNRecipes {
 			"     ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldTriggerPart, 1), new Object[]{
+		manager.addRecipe(new ItemStack(TNItems.clayMoldTriggerPart, 1), new Object[]{
 			"     ",
 			"     ",
 			"#### ",
@@ -134,7 +129,7 @@ public class TNRecipes {
 			"     ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldMusketShot, 1), new Object[]{
+		manager.addRecipe(new ItemStack(TNItems.clayMoldMusketShot, 1), new Object[]{
 			" # # ",
 			"     ",
 			" # # ",
@@ -142,7 +137,7 @@ public class TNRecipes {
 			" # # ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldHornPart, 1), new Object[]{
+		manager.addRecipe(new ItemStack(TNItems.clayMoldHornPart, 1), new Object[]{
 			"  #  ",
 			" ### ",
 			"#####",
@@ -150,7 +145,7 @@ public class TNRecipes {
 			"     ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldArrowhead, 1), new Object[]{
+		manager.addRecipe(new ItemStack(TNItems.clayMoldArrowhead, 1), new Object[]{
 			"  #  ",
 			" ### ",
 			"     ",
@@ -158,7 +153,7 @@ public class TNRecipes {
 			" ### ",
 			'#',
 			new ItemStack(TFCItems.flatClay, 1, 1)});
-		CraftingManagerTFC.getInstance().addRecipe(new ItemStack(TNItems.clayMoldSpearhead, 1), new Object[]{
+		manager.addRecipe(new ItemStack(TNItems.clayMoldSpearhead, 1), new Object[]{
 			"  #  ",
 			" ### ",
 			"#####",
@@ -181,7 +176,9 @@ public class TNRecipes {
 	}
 	
 	public static void registerRecipes() {
+		AnvilManager anvilManager;
 		CraftingManagerTFC craftingManager;
+		KilnCraftingManager kilnManager;
 		
 		GameRegistry.addRecipe(new ItemStack(TNItems.thatchDoor, 1),
 			"01",
@@ -189,20 +186,21 @@ public class TNRecipes {
 			'0',
 			new ItemStack(TFCItems.stick, 1),
 			'1',
-			new ItemStack(TFCItems.straw, 1));
+			new ItemStack(TFCBlocks.thatch, 1));
 		
 //		addShapelessRecipe(new ItemStack(TNItems.thatchDoor, 1),
 //				Recipes.getStackNoTemp(new ItemStack(TNItems.clayMoldDoubleHoe, 1, 2)));
 		
 		craftingManager = CraftingManagerTFC.getInstance();
-		AnvilManager anvilManager = AnvilManager.getInstance();
+		anvilManager = AnvilManager.getInstance();
+		kilnManager = KilnCraftingManager.getInstance();
 		
+		registerForging(anvilManager);
 		registerFueling();
 		registerKnapping(craftingManager);
-		registerKilning();
+		registerKilning(kilnManager);
 		registerMolding(craftingManager);
 		registerTooling();
-		registerForging(anvilManager);
 	}
 	
 	private static void registerTooling() {
