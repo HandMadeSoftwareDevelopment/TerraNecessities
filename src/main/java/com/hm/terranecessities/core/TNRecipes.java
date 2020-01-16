@@ -11,9 +11,13 @@ import com.bioxx.tfc.api.Crafting.KilnRecipe;
 import com.hm.terranecessities.item.TNItems;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class TNRecipes {
+	public static Item spears[];
+	
 	private static void registerFueling() {
 		TFCFuelHandler.registerFuel(TNItems.thatchDoor, 200);
 	}
@@ -224,6 +228,8 @@ public class TNRecipes {
 				Recipes.getStackNoTemp(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 4)));
 		GameRegistry.addShapelessRecipe(new ItemStack(TFCItems.blackBronzeKnifeHead, 2),
 				Recipes.getStackNoTemp(new ItemStack(TNItems.clayMoldDoubleKnife, 1, 5)));
+		
+//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(TNItems.bronzeSpear, 1), "#", "I", '#', new ItemStack(TNItems.bronzeSpearHead, 1, 0), 'I', "stickWood"));
 	}
 
 	private static void registerShapelessRecipes() {

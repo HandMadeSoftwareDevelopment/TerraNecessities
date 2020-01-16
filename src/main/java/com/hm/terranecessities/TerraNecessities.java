@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.bioxx.tfc.Handlers.Network.PacketPipeline;
 import com.hm.terranecessities.block.TNBlocks;
+import com.hm.terranecessities.core.TNDictionary;
 import com.hm.terranecessities.core.TNRecipes;
 import com.hm.terranecessities.handler.TNPlayerEntityHandler;
 import com.hm.terranecessities.item.TNItems;
@@ -56,6 +57,10 @@ public class TerraNecessities {
 		
 		MinecraftForge.EVENT_BUS.register(new TNPlayerEntityHandler());
 		
+		TNItems.loadDelayedItems();
+		TNItems.registerDelayedItems();
+		
+		TNDictionary.registerOreDictionary();
 		TNRecipes.registerRecipes();
 		
 		return;

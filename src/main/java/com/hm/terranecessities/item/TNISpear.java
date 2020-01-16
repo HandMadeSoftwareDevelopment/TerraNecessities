@@ -1,12 +1,25 @@
 package com.hm.terranecessities.item;
 
-import com.bioxx.tfc.Items.Tools.ItemWeapon;
+import com.bioxx.tfc.api.Enums.EnumDamageType;
+import com.bioxx.tfc.api.Enums.EnumItemReach;
+import com.bioxx.tfc.api.Enums.EnumSize;
 
-public class TNISpear extends ItemWeapon{
+import net.minecraft.item.ItemStack;
 
-	public TNISpear(ToolMaterial par2, float damage) {
-		super(par2, damage);
-		// TODO Auto-generated constructor stub
+public class TNISpear extends TNISword {
+	public TNISpear(ToolMaterial material, float damage) {
+		super(material, damage, EnumDamageType.PIERCING);
+		
+		setMaxDamage(material.getMaxUses());
 	}
 	
+	@Override
+	public EnumSize getSize(ItemStack stack) {
+		return EnumSize.LARGE;
+	}
+	
+	@Override
+	public EnumItemReach getReach(ItemStack stack) {
+		return EnumItemReach.FAR;
+	}
 }
