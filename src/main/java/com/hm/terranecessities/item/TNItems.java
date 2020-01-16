@@ -1,6 +1,8 @@
 package com.hm.terranecessities.item;
 
-import com.hm.terranecessities.TNCore;
+import com.bioxx.tfc.Core.TFCTabs;
+import com.bioxx.tfc.api.TFCItems;
+import com.hm.terranecessities.core.TNRecipes;
 import com.hm.terranecessities.core.TNTabs;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -21,7 +23,20 @@ public class TNItems {
 	
 	public static Item metalSpearhead, stoneSpearhead, stoneSpear, metalSpear, metalArrowhead, metalArrow;
 	
+	public static Item copperSpear, bronzeSpear, blackBronzeSpear, bismuthBronzeSpear;
+	
 	public static Item stoneShot, copperShot, zincShot, bismuthShot, bronzeShot, blackBronzeShot, silverShot;
+	
+	public static void loadDelayedItems() {
+		// Weapons
+		copperSpear = new TNISpear(TFCItems.copperToolMaterial, 80).setUnlocalizedName("spear_copper");
+		bronzeSpear = new TNISpear(TFCItems.bronzeToolMaterial, 100).setUnlocalizedName("spear_bronze");
+		blackBronzeSpear = new TNISpear(TFCItems.blackBronzeToolMaterial, 95).setUnlocalizedName("spear_black_bronze");
+		bismuthBronzeSpear = new TNISpear(TFCItems.bismuthBronzeToolMaterial, 90).setUnlocalizedName("spear_bismuth_bronze");
+		
+		// Recipe items
+		TNRecipes.spears = new Item[] { copperSpear, bronzeSpear, blackBronzeSpear, bismuthBronzeSpear };
+	}
 	
 	public static void loadItems() {
 		// Miscellaneous
@@ -56,11 +71,22 @@ public class TNItems {
 		partPistolBarrel = new Item().setUnlocalizedName("part_pistol_barrel").setCreativeTab(TNTabs.TN_ITEMS);
 		partRifleBarrel = new Item().setUnlocalizedName("part_rifle_barrel").setCreativeTab(TNTabs.TN_ITEMS);
 		partBlunderbussBarrel = new Item().setUnlocalizedName("part_blunderbuss_barrel").setCreativeTab(TNTabs.TN_ITEMS);
-		// Ammo Items
+		
+		// Ammunition
 		
 	}
 	
+	public static void registerDelayedItems() {
+		for (Item item : TNRecipes.spears) {
+			GameRegistry.registerItem(item, item.getUnlocalizedName());
+		}
+		
+		// Creative tabs
+		((TFCTabs) TNTabs.TN_ITEMS).setTabIconItem(copperSpear);
+	}
+	
 	public static void registerItems() {
+		// Items
 		GameRegistry.registerItem(thatchDoor, thatchDoor.getUnlocalizedName());
 		
 		GameRegistry.registerItem(partBlunderbussStock, partBlunderbussStock.getUnlocalizedName());

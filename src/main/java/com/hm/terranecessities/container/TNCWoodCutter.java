@@ -11,20 +11,32 @@ import com.hm.terranecessities.entity.TNEWoodCutter;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class TNCWoodCutter extends ContainerTFC {
 	private TNEWoodCutter woodCutter;
+	private World worldObj;
+	private InventoryCrafting craftMatrix = new InventoryCrafting(this, 2, 1);
+	private boolean constructing;
 	
 	public TNCWoodCutter(InventoryPlayer player, TNEWoodCutter woodCutter, World world, int x, int y, int z) {
 		this.woodCutter = woodCutter;
+		this.worldObj = world;
+		
+		constructing = true;
 		
 		woodCutter.openInventory();
+		
 		layoutContainer(player, woodCutter, 0, 0);
 		
 		PlayerInventory.buildInventoryLayout(this, player, 8, 90, false, true);
+		
+		onCraftMatrixChanged(craftMatrix);
+		
+		constructing = false;
 	}
 	
 	@Override
@@ -49,7 +61,7 @@ public class TNCWoodCutter extends ContainerTFC {
 	@Override
 	public ItemStack transferStackInSlotTFC(EntityPlayer player, int index) {
 		ItemStack stack = null;
-		Slot slot = (Slot) this.inventorySlots.get(index);
+		Slot slot = (Slot) inventorySlots.get(index);
 		
 		if (slot != null && slot.getHasStack()) {
 			ItemStack slotStack = slot.getStack();

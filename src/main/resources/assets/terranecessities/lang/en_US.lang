@@ -63,3 +63,9 @@ itemGroup.TerraNecessities=TerraNecessities
 
 # Tiles
 tile.TNKiln.name=Kiln
+
+# Weapons
+item.spear_bismuth_bronze.name=Bismuth Bronzehead Spear
+item.spear_black_bronze.name=Black Bronzehead Spear
+item.spear_bronze.name=Bronzehead Spear
+item.spear_copper.name=Copperhead Spear
