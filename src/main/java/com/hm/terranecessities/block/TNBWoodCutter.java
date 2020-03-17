@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.bioxx.tfc.Blocks.BlockTerraContainer;
 import com.bioxx.tfc.Core.TFC_Textures;
-import com.bioxx.tfc.TileEntities.TEFoodPrep;
 import com.hm.terranecessities.core.TNTabs;
 import com.hm.terranecessities.entity.TNEWoodCutter;
 
@@ -48,8 +47,8 @@ public class TNBWoodCutter extends BlockTerraContainer {
 	}
 	
 	@Override
-	public void breakBlock(World world, int par2, int par3, int par4, Block par5, int par6) {
-		eject(world, par2, par3, par4);
+	public void breakBlock(World world, int x, int y, int z, Block par5, int par6) {
+		eject(world, x, y, z);
 	}
 	
 	@Override
@@ -58,9 +57,13 @@ public class TNBWoodCutter extends BlockTerraContainer {
 	}
 	
 	public void eject(World world, int x, int y, int z) {
-		if (world.getTileEntity(x, y, z) instanceof TEFoodPrep) {
-			TNEWoodCutter te = (TNEWoodCutter) world.getTileEntity(x, y, z);
+		TNEWoodCutter te;
+		
+		if (world.getTileEntity(x, y, z) instanceof TNEWoodCutter) {
+			te = (TNEWoodCutter) world.getTileEntity(x, y, z);
+			
 			te.ejectContents();
+			
 			world.removeTileEntity(x, y, z);
 		}
 	}
