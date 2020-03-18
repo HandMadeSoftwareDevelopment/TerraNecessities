@@ -21,6 +21,10 @@ public class TNCommonGUIHandler extends GuiHandler {
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		TileEntity te = world.getTileEntity(x, y, z);
 		
+		if (te == null) {
+			return null;
+		}
+		
 		switch (ID) {
 		case TNG_KILN:
 			return new TNCKiln(player.inventory, (TNEKiln) te, world, x, y, z);

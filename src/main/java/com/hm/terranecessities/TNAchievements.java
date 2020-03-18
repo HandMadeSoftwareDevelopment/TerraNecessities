@@ -32,7 +32,7 @@ public class TNAchievements {
 		achievementList = new ArrayList<>();
 		
 		atSoup = createAchievement("achievement.tn_atsoup", "tn_atsoup", 0, 0, new ItemStack(TFCItems.looseRock), null);
-		atSoup = createAchievement("achievement.tn_doubleefficiency", "tn_doublefficiency", 0, 0, new ItemStack(TNItems.clayMoldDoubleKnife), null);
+		doubleEfficiency = createAchievement("achievement.tn_doubleefficiency", "tn_doublefficiency", 0, 0, new ItemStack(TNItems.clayMoldDoubleKnife), null);
 		
 		achievements = new Achievement[achievementList.size()];
 		achievements = achievementList.toArray(achievements);

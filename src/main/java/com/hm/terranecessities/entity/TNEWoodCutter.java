@@ -16,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraftforge.common.util.Constants;
 
 public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	public ItemStack[] storage = new ItemStack[4];
@@ -173,8 +174,8 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	}
 	
 	@Override
-	public boolean isUseableByPlayer(EntityPlayer p_70300_1_) {
-		return false;
+	public boolean isUseableByPlayer(EntityPlayer player) {
+		return worldObj.getTileEntity(xCoord, yCoord, zCoord) != this ? false : player.getDistanceSq((double)xCoord + 0.5D, (double)yCoord + 0.5D, (double)zCoord + 0.5D) <= 64.0D;
 	}
 	
 	public void openGUI(EntityPlayer player) {
@@ -189,28 +190,36 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	public void readFromNBT(NBTTagCompound nbt) {
 		super.readFromNBT(nbt);
 		
-		NBTTagList tags = nbt.getTagList("Items", 10);
+		NBTTagList tags = nbt.getTagList("Items", Constants.NBT.TAG_COMPOUND);
 		
 		storage = new ItemStack[getSizeInventory()];
 		
 		for (int i = 0; i < tags.tagCount(); i++) {
 			NBTTagCompound data = tags.getCompoundTagAt(i);
 			
-			byte byte0 = data.getByte("Slot");
+			int j = data.getByte("Slot") & 255;
 			
-			if (byte0 >= 0 && byte0 < storage.length) {
-				storage[byte0] = ItemStack.loadItemStackFromNBT(data);
+			if (j >= 0 && j < storage.length) {
+				storage[j] = ItemStack.loadItemStackFromNBT(data);
 			}
 		}
 	}
 	
 	@Override
 	public void setInventorySlotContents(int i, ItemStack stack) {
-		if (!TFC_Core.areItemsEqual(storage[i], stack)) {
-			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+		storage[i] = stack;
+		
+		if (stack != null &&stack.stackSize > getInventoryStackLimit()) {
+			stack.stackSize = getInventoryStackLimit();
 		}
 		
-		storage[i] = stack;
+		markDirty();
+		
+//		if (!TFC_Core.areItemsEqual(storage[i], stack)) {
+//			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
+//		}
+		
+//		storage[i] = stack;
 	}
 	
 	@Override
@@ -222,11 +231,12 @@ public class TNEWoodCutter extends NetworkTileEntity implements IInventory {
 	public void writeToNBT(NBTTagCompound nbt) {
 		super.writeToNBT(nbt);
 		
+		NBTTagCompound tag;
 		NBTTagList tags = new NBTTagList();
 		
 		for (int i = 0; i < storage.length; ++i) {
 			if (storage[i] != null) {
-				NBTTagCompound tag = new NBTTagCompound();
+				tag = new NBTTagCompound();
 				
 				tag.setByte("Slot", (byte) i);
 				
