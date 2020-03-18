@@ -52,26 +52,26 @@ public class TNCWoodCutter extends ContainerTFC {
 		ItemStack[] output;
 		ItemStack axe, wood;
 		
-//		if (inventory == craft) {
-//			axe = craft.getStackInSlot(0);
-//			wood = craft.getStackInSlot(1);
-//			
-//			if (axe == null || wood == null) {
-//				state = 1;
-//				return;
-//			}
-//			
-//			if (!axe.getClass().isInstance(TFCItems.copperAxe) || !wood.getClass().isInstance(TFCItems.logs)) {
-//				state = 1;
-//				return;
-//			}
-//			
+		if (inventory == craft) {
+			axe = craft.getStackInSlot(0);
+			wood = craft.getStackInSlot(1);
+			
+			if (axe == null || wood == null) {
+				state = 1;
+				return;
+			}
+			
+			if (!axe.getClass().isInstance(TFCItems.copperAxe) || !wood.getClass().isInstance(TFCItems.logs)) {
+				state = 1;
+				return;
+			}
+			
 //			output = TNWoodCutterRecipes.getCraftResults(axe, wood);
 //			
 //			if (output == null) {
 //				state = 0;
 //			}
-//		}
+		}
 	}
 	
 	@Override

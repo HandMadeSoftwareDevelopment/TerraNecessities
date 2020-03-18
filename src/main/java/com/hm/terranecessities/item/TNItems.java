@@ -2,6 +2,7 @@ package com.hm.terranecessities.item;
 
 import com.bioxx.tfc.Core.TFCTabs;
 import com.bioxx.tfc.api.TFCItems;
+import com.bioxx.tfc.api.Enums.EnumFoodGroup;
 import com.hm.terranecessities.core.TNRecipes;
 import com.hm.terranecessities.core.TNTabs;
 
@@ -27,6 +28,8 @@ public class TNItems {
 	
 	public static Item stoneShot, copperShot, zincShot, bismuthShot, bronzeShot, blackBronzeShot, silverShot;
 	
+	public static Item riceBalls;
+	
 	public static void loadDelayedItems() {
 		// Weapons
 		copperSpear = new TNISpear(TFCItems.copperToolMaterial, 80).setUnlocalizedName("spear_copper");
@@ -34,8 +37,14 @@ public class TNItems {
 		blackBronzeSpear = new TNISpear(TFCItems.blackBronzeToolMaterial, 95).setUnlocalizedName("spear_black_bronze");
 		bismuthBronzeSpear = new TNISpear(TFCItems.bismuthBronzeToolMaterial, 90).setUnlocalizedName("spear_bismuth_bronze");
 		
+		loadFoods();
+		
 		// Recipe items
 		TNRecipes.spears = new Item[] { copperSpear, bronzeSpear, blackBronzeSpear, bismuthBronzeSpear };
+	}
+	
+	public static void loadFoods() {
+		riceBalls = new TNIFood(EnumFoodGroup.Vegetable, 0, 0, 0, 10, 20, true, true).setUnlocalizedName("rice_balls");
 	}
 	
 	public static void loadItems() {
@@ -81,8 +90,14 @@ public class TNItems {
 			GameRegistry.registerItem(item, item.getUnlocalizedName());
 		}
 		
+		registerFoods();
+		
 		// Creative tabs
 		((TFCTabs) TNTabs.TN_ITEMS).setTabIconItem(copperSpear);
+	}
+	
+	public static void registerFoods() {
+		GameRegistry.registerItem(riceBalls, riceBalls.getUnlocalizedName());
 	}
 	
 	public static void registerItems() {
