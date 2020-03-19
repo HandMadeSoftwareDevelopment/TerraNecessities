@@ -38,7 +38,7 @@ public class TNIFood extends ItemFoodTFC {
 		}
 		
 		if (hasCookedIcon) {
-			cookedIcon = register.registerIcon(TNCore.MODID + ":" + textureFolder + getUnlocalizedName().replace("item.", "") + " Cooked");
+			cookedIcon = register.registerIcon(TNCore.MODID + ":" + textureFolder + getUnlocalizedName().replace("item.", "") + "_cooked");
 		}
 		
 		MinecraftForgeClient.registerItemRenderer(this, new FoodItemRenderer());
